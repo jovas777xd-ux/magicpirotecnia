@@ -1,0 +1,3360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Catálogo profesional de pirotecnia para celebraciones responsables." />
+  <title>Pirotecnia MAGIC | Una explosión de color</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --red: #ed1c24;
+      --red-dark: #bd1118;
+      --red-soft: #fff0f0;
+      --white: #ffffff;
+      --ink: #191919;
+      --muted: #666666;
+      --line: #eeeeee;
+      --shadow: 0 18px 50px rgba(90, 0, 5, .14);
+      --neon-glow: 0 8px 24px rgba(237, 28, 36, .22);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: var(--red);
+      color: #fff;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--red);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--red);
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.08;
+      margin: 14px 0 18px;
+    }
+
+    .section-title span {
+      color: var(--red);
+    }
+
+    .section-copy {
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(225, 6, 0, .1);
+    }
+
+    nav {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      font-size: 1.18rem;
+    }
+
+    .logo-mark {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--red);
+      border-radius: 50% 50% 50% 10%;
+      transform: rotate(-45deg);
+      box-shadow: var(--neon-glow);
+    }
+
+    .logo-mark span {
+      transform: rotate(45deg);
+      font-size: 1.3rem;
+    }
+
+    .logo b {
+      color: var(--red);
+    }
+
+    .nav-links {
+      order: 2;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: .85rem;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a:not(.nav-cta)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 0;
+      height: 2px;
+      background: var(--red);
+      transition: .25s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta,
+    .btn-primary {
+      border: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #fff;
+      background: var(--red);
+      padding: 13px 21px;
+      border-radius: 4px;
+      font-weight: 800;
+      box-shadow: var(--neon-glow);
+      transition: .25s;
+    }
+
+    .nav-cta:hover,
+    .btn-primary:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px);
+    }
+
+    .cart-trigger {
+      order: 3;
+      border: 2px solid var(--red);
+      background: #fff;
+      color: var(--red);
+      min-height: 45px;
+      padding: 0 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .cart-count {
+      display: inline-grid;
+      place-items: center;
+      min-width: 23px;
+      height: 23px;
+      margin-left: 5px;
+      padding: 0 5px;
+      color: #fff;
+      background: var(--red);
+      border-radius: 99px;
+      font-size: .68rem;
+    }
+
+    .menu-btn {
+      order: 4;
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 710px;
+      position: relative;
+      display: grid;
+      align-items: center;
+      background: linear-gradient(
+        112deg,
+        #ffffff 0%,
+        #ffffff 54%,
+        #50ed1c 54%,
+        #c70f16 100%
+      );
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 590px;
+      height: 590px;
+      right: -110px;
+      top: -120px;
+      border: 90px solid rgba(255, 255, 255, .11);
+      border-radius: 50%;
+      animation: pulseRing 4s ease-in-out infinite;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -120px;
+      bottom: -170px;
+      width: 390px;
+      height: 390px;
+      border: 60px solid rgba(237, 28, 36, .055);
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      gap: 65px;
+      padding: 70px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-logo-slot {
+      width: min(420px, 100%);
+      min-height: 112px;
+      margin-bottom: 25px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-logo-slot img {
+      width: 100%;
+      max-height: 145px;
+      object-fit: contain;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      color: var(--red);
+      text-align: center;
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .logo-placeholder small {
+      display: block;
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: .64rem;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .presentation-label {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 7px 12px;
+      color: #fff;
+      background: var(--ink);
+      font-size: .67rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.6rem, 7vw, 6.6rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: .86;
+      letter-spacing: -.075em;
+      margin: 20px 0 26px;
+    }
+
+    .hero h1 span {
+      color: var(--red);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 590px;
+      font-size: 1.03rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .btn-primary {
+      padding: 16px 25px;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 15px 23px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      font-weight: 800;
+      transition: .25s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .hero-notes {
+      display: flex;
+      gap: 30px;
+      margin-top: 37px;
+      color: #555;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    .hero-notes span::before {
+      content: "✓";
+      color: var(--red);
+      margin-right: 8px;
+    }
+
+    .hero-visual {
+      position: relative;
+      height: 500px;
+    }
+
+    .red-panel {
+      position: absolute;
+      inset: 25px 15px 15px 70px;
+      background: rgba(115, 0, 5, .2);
+      border: 2px solid rgba(255, 255, 255, .65);
+      border-radius: 22px 4px 22px 4px;
+      box-shadow: 0 25px 60px rgba(80, 0, 5, .35);
+      transform: rotate(3deg);
+    }
+
+    .firework {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-45%, -50%);
+    }
+
+    .ray {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 46%;
+      height: 3px;
+      transform-origin: left center;
+      background: linear-gradient(90deg, #fff, transparent);
+      animation: rayGlow 2.2s ease-in-out infinite alternate;
+    }
+
+    .ray::after {
+      content: "";
+      position: absolute;
+      right: 25%;
+      top: -3px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 0 16px #fff;
+    }
+
+    .spark-core {
+      position: absolute;
+      inset: 45%;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 0 40px 15px rgba(255, 255, 255, .55);
+    }
+
+    .visual-card {
+      position: absolute;
+      left: 15px;
+      bottom: 35px;
+      width: 210px;
+      padding: 22px;
+      background: #fff;
+      box-shadow: var(--shadow);
+      border: 3px solid var(--ink);
+      transform: rotate(-3deg);
+    }
+
+    .visual-card strong {
+      display: block;
+      font-size: 1.8rem;
+      color: var(--red);
+      line-height: 1;
+    }
+
+    .visual-card small {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .features {
+      border-block: 1px solid var(--line);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .feature {
+      padding: 28px 25px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-right: 1px solid var(--line);
+    }
+
+    .feature:last-child {
+      border: 0;
+    }
+
+    .feature-icon {
+      color: var(--red);
+      font-size: 1.45rem;
+    }
+
+    .feature strong {
+      display: block;
+      font-size: .86rem;
+    }
+
+    .feature small {
+      color: var(--muted);
+      font-size: .72rem;
+    }
+
+    .products {
+      padding: 110px 0;
+      background: #ffffff;
+    }
+
+    .products-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 38px;
+    }
+
+    .catalog-tools {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin: -12px 0 30px;
+    }
+
+    .search-box {
+      width: min(430px, 100%);
+      position: relative;
+    }
+
+    .search-box input {
+      padding: 14px 18px 14px 44px;
+      border: 2px solid #e3e3e3;
+      border-radius: 4px;
+    }
+
+    .search-box span {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--red);
+    }
+
+    .result-count {
+      white-space: nowrap;
+      font-size: .78rem;
+      font-weight: 800;
+      color: var(--muted);
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      border: 1px solid #e8e8e8;
+      background: #ffffff;
+      padding: 10px 16px;
+      border-radius: 99px;
+      cursor: pointer;
+      font-size: .78rem;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      color: #fff;
+      background: var(--red);
+      border-color: var(--red);
+      box-shadow: var(--neon-glow);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      border: 1px solid #eeeeee;
+      background: #ffffff;
+      transition: .3s;
+      overflow: hidden;
+    }
+
+    .product-card:hover {
+      transform: translateY(-9px) rotate(-.5deg);
+      box-shadow: 0 24px 50px rgba(130, 0, 7, .2);
+      border-color: var(--red);
+    }
+
+    .product-art {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      padding: 4px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      background: linear-gradient(140deg, #fff0f0, #ffffff);
+      overflow: hidden;
+    }
+
+    .product-art::before {
+      content: "";
+      width: 180px;
+      height: 180px;
+      border: 1px solid rgba(225, 6, 0, .2);
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .product-art .symbol {
+      font-size: 5rem;
+      filter: drop-shadow(0 14px 13px rgba(110, 0, 0, .16));
+      z-index: 1;
+    }
+
+    .product-art .product-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: scale-down;
+      object-position: center;
+      position: relative;
+      z-index: 1;
+      border-radius: 10px;
+      background: #080808;
+      margin: 0 auto;
+    }
+
+    .tag {
+      position: absolute;
+      top: 17px;
+      left: 17px;
+      background: var(--red);
+      color: #fff;
+      padding: 7px 12px;
+      font-size: .62rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      box-shadow: 5px 5px 0 var(--ink);
+    }
+
+    .product-info {
+      padding: 24px;
+    }
+
+    .product-category {
+      color: var(--red);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .product-info h3 {
+      font-size: 1.18rem;
+      margin: 6px 0;
+    }
+
+    .product-info p {
+      color: var(--muted);
+      font-size: .82rem;
+      min-height: 48px;
+    }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .price {
+      font-size: 1.15rem;
+      font-weight: 900;
+    }
+
+    .add-cart {
+      border: 0;
+      background: var(--red);
+      color: #fff;
+      min-height: 42px;
+      padding: 0 13px;
+      cursor: pointer;
+      font-size: .75rem;
+      font-weight: 900;
+      transition: .2s;
+    }
+
+    .add-cart:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px);
+    }
+
+    .safety {
+      padding: 105px 0;
+      background: linear-gradient(135deg, #ed1c24, #c70f16);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .safety::after {
+      content: "SEGURIDAD";
+      position: absolute;
+      right: -20px;
+      bottom: -60px;
+      font-size: 9rem;
+      font-weight: 900;
+      color: rgba(255, 255, 255, .055);
+    }
+
+    .safety-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .safety .eyebrow {
+      color: #fff;
+    }
+
+    .safety .eyebrow::before {
+      background: #fff;
+    }
+
+    .safety .section-copy {
+      color: rgba(255, 255, 255, .76);
+    }
+
+    .safety-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .safety-item {
+      padding: 22px;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .2);
+      backdrop-filter: blur(5px);
+    }
+
+    .safety-item span {
+      font-size: 1.4rem;
+    }
+
+    .safety-item strong {
+      display: block;
+      margin: 8px 0 3px;
+    }
+
+    .safety-item small {
+      color: rgba(255, 255, 255, .72);
+    }
+
+    .contact {
+      padding: 105px 0;
+      background: #fff0f0;
+    }
+
+    .contact-box {
+      background: #ffffff;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+    }
+
+    .contact-info {
+      padding: 48px;
+      background: #171717;
+      color: #fff;
+    }
+
+    .contact-info h2 {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+
+    .contact-info p {
+      color: #aaa;
+      font-size: .88rem;
+    }
+
+    .contact-detail {
+      margin-top: 35px;
+      display: grid;
+      gap: 21px;
+    }
+
+    .contact-detail div {
+      display: flex;
+      gap: 14px;
+    }
+
+    .contact-detail span {
+      color: #ff3b36;
+    }
+
+    form {
+      padding: 48px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: .72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid #dddddd;
+      padding: 13px 14px;
+      outline: 0;
+      background: #ffffff;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(237, 28, 36, .12);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 105px;
+    }
+
+    form .btn-primary {
+      justify-self: start;
+    }
+
+    footer {
+      background: #0e0e0e;
+      color: #fff;
+      padding: 35px 0;
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    footer p {
+      color: #888;
+      font-size: .72rem;
+      max-width: 700px;
+    }
+
+    .toast {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 100;
+      background: #171717;
+      color: #fff;
+      padding: 15px 20px;
+      border-left: 4px solid var(--red);
+      box-shadow: var(--shadow);
+      transform: translateY(140%);
+      opacity: 0;
+      transition: .35s;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .mobile-cta {
+      display: none;
+    }
+
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 110;
+      background: rgba(0, 0, 0, .55);
+      opacity: 0;
+      pointer-events: none;
+      transition: .3s;
+    }
+
+    .cart-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 120;
+      width: min(430px, 100%);
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      box-shadow: -20px 0 55px rgba(0, 0, 0, .25);
+      transform: translateX(105%);
+      transition: .35s ease;
+    }
+
+    .cart-drawer.open {
+      transform: translateX(0);
+    }
+
+    .cart-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px;
+      color: #fff;
+      background: var(--red);
+    }
+
+    .cart-head h2 {
+      font-size: 1.35rem;
+    }
+
+    .cart-close {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, .6);
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      font-size: 1.65rem;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 18px;
+    }
+
+    .empty-cart {
+      height: 100%;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .empty-cart span {
+      display: block;
+      font-size: 3rem;
+      margin-bottom: 8px;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 62px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .cart-item-icon {
+      width: 62px;
+      height: 62px;
+      display: grid;
+      place-items: center;
+      background: var(--red-soft);
+      font-size: 1.8rem;
+    }
+
+    .cart-item h3 {
+      font-size: .86rem;
+      line-height: 1.3;
+    }
+
+    .cart-item-price {
+      color: var(--red);
+      font-size: .76rem;
+      font-weight: 900;
+    }
+
+    .quantity {
+      display: flex;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .quantity button {
+      width: 32px;
+      height: 32px;
+      border: 1px solid #ddd;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    .quantity span {
+      min-width: 32px;
+      text-align: center;
+      font-size: .8rem;
+      font-weight: 800;
+    }
+
+    .remove-item {
+      border: 0;
+      background: transparent;
+      color: #999;
+      cursor: pointer;
+      font-size: 1.15rem;
+    }
+
+    .cart-footer {
+      padding: 20px;
+      border-top: 1px solid #ddd;
+      background: #fafafa;
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      font-size: 1.05rem;
+      font-weight: 900;
+    }
+
+    .checkout {
+      width: 100%;
+      min-height: 52px;
+      border: 0;
+      color: #fff;
+      background: #20a83e;
+      cursor: pointer;
+      font-weight: 900;
+      box-shadow: 0 8px 20px rgba(32, 168, 62, .22);
+    }
+
+    .checkout:disabled {
+      background: #aaa;
+      cursor: not-allowed;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: .65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }    .ticker {
+      overflow: hidden;
+      background: #111;
+      color: #fff;
+      border-block: 3px solid var(--red);
+    }
+
+    .ticker-track {
+      width: max-content;
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      padding: 12px 0;
+      animation: tickerMove 22s linear infinite;
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .ticker-track span::after {
+      content: "✦";
+      color: var(--red);
+      margin-left: 34px;
+    }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 200;
+      width: 0;
+      height: 4px;
+      background: var(--red);
+      box-shadow: 0 0 12px rgba(237, 28, 36, .65);
+      pointer-events: none;
+    }
+
+    .neon-frame {
+      position: fixed;
+      z-index: 190;
+      pointer-events: none;
+      opacity: .92;
+      filter: saturate(1.35) brightness(1.08);
+    }
+
+    .neon-frame.top,
+    .neon-frame.bottom {
+      right: 0;
+      left: 0;
+      height: 12px;
+      background: linear-gradient(
+        90deg,
+        #e9002f,
+        #ff5a00,
+        #ff123f,
+        #ff7a00,
+        #e9002f
+      );
+      background-size: 240% 100%;
+      animation:
+        neonFlow 3.6s linear infinite,
+        flameFlicker 1.4s ease-in-out infinite alternate;
+      box-shadow:
+        0 0 9px #ff2b43,
+        0 0 20px rgba(255, 0, 60, .65),
+        0 0 38px rgba(255, 0, 43, .35);
+    }
+
+    .neon-frame.top {
+      top: 0;
+    }
+
+    .neon-frame.bottom {
+      bottom: 0;
+    }
+
+    .neon-frame.left,
+    .neon-frame.right {
+      top: 0;
+      bottom: 0;
+      width: 12px;
+      background: linear-gradient(
+        180deg,
+        #e9002f,
+        #ff5a00,
+        #ff123f,
+        #ff7a00,
+        #e9002f
+      );
+      background-size: 100% 240%;
+      animation:
+        neonFlowVertical 3.6s linear infinite,
+        flameFlicker 1.4s ease-in-out infinite alternate;
+      box-shadow:
+        0 0 9px #ff2b43,
+        0 0 20px rgba(255, 0, 60, .65),
+        0 0 38px rgba(255, 0, 43, .35);
+    }
+
+    .neon-frame.left {
+      left: 0;
+    }
+
+    .neon-frame.right {
+      right: 0;
+    }
+
+    .neon-corner {
+      position: fixed;
+      z-index: 191;
+      width: 40px;
+      height: 40px;
+      pointer-events: none;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        #ffb000 0 10%,
+        #ff4d00 28%,
+        #ff003c 50%,
+        transparent 74%
+      );
+      filter: blur(.5px) saturate(1.3);
+      animation: cornerPulse 2.2s ease-in-out infinite alternate;
+    }
+
+    .neon-corner.tl {
+      top: -10px;
+      left: -10px;
+    }
+
+    .neon-corner.tr {
+      top: -10px;
+      right: -10px;
+    }
+
+    .neon-corner.bl {
+      bottom: -10px;
+      left: -10px;
+    }
+
+    .neon-corner.br {
+      right: -10px;
+      bottom: -10px;
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+
+    @keyframes neonFlow {
+      to {
+        background-position: -240% 0;
+      }
+    }
+
+    @keyframes neonFlowVertical {
+      to {
+        background-position: 0 -240%;
+      }
+    }
+
+    @keyframes flameFlicker {
+      from {
+        opacity: .82;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes cornerPulse {
+      to {
+        transform: scale(1.2);
+        opacity: .85;
+      }
+    }
+
+    @keyframes tickerMove {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes pulseRing {
+      50% {
+        transform: scale(1.08);
+        opacity: .62;
+      }
+    }
+
+    @keyframes rayGlow {
+      from {
+        opacity: .35;
+      }
+
+      to {
+        opacity: 1;
+        filter: drop-shadow(0 0 7px #fff);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .neon-frame,
+      .neon-corner {
+        animation: none !important;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 78px;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        padding: 25px;
+        flex-direction: column;
+        align-items: stretch;
+        border-bottom: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero-grid,
+      .safety-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        height: 390px;
+      }
+
+      .red-panel {
+        inset: 10px 20px 10px 60px;
+      }
+
+      .firework {
+        width: 280px;
+        height: 280px;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .products-head {
+        display: grid;
+      }
+
+      .catalog-tools {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .search-box {
+        width: 100%;
+      }
+
+      .contact-info {
+        padding: 35px 25px;
+      }
+
+      form {
+        padding: 35px 25px;
+      }
+
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 620px) {
+      body {
+        padding-bottom: 142px;
+      }
+
+      .container {
+        width: min(100% - 28px, 1160px);
+      }
+
+      header nav {
+        height: 67px;
+      }
+
+      .logo {
+        font-size: .98rem;
+      }
+
+      .logo-mark {
+        width: 37px;
+        height: 37px;
+      }
+
+      .cart-trigger {
+        min-height: 41px;
+        padding: 0 10px;
+        font-size: .75rem;
+      }
+
+      .menu-btn {
+        font-size: 1.35rem;
+      }
+
+      .nav-links {
+        top: 67px;
+      }
+
+      .hero {
+        min-height: auto;
+        background: linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #ffffff 68%,
+          #ed1c24 68%,
+          #c70f16 100%
+        );
+      }
+
+      .hero-grid {
+        gap: 24px;
+        padding: 35px 0 26px;
+      }
+
+      .hero-logo-slot {
+        min-height: 88px;
+        margin-bottom: 18px;
+      }
+
+      .hero-logo-slot img {
+        max-height: 115px;
+      }
+
+      .presentation-label {
+        font-size: .59rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 16vw, 4.2rem);
+        margin: 17px 0 20px;
+      }
+
+      .hero p {
+        font-size: .92rem;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 25px;
+      }
+
+      .hero-actions a {
+        width: 100%;
+        min-height: 52px;
+      }
+
+      .hero-notes {
+        display: grid;
+        gap: 7px;
+        margin-top: 24px;
+      }
+
+      .hero-visual {
+        height: 300px;
+      }
+
+      .red-panel {
+        inset: 0 8px 8px 38px;
+      }
+
+      .firework {
+        width: 225px;
+        height: 225px;
+      }
+
+      .visual-card {
+        left: 0;
+        bottom: 17px;
+        width: 175px;
+        padding: 16px;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature {
+        padding: 17px 10px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .products,
+      .safety,
+      .contact {
+        padding: 64px 0;
+      }
+
+      .section-title {
+        font-size: 2.15rem;
+      }
+
+      .filters {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+      }
+
+      .filter-btn {
+        min-height: 46px;
+        padding: 8px;
+      }
+
+      .filter-btn:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .product-art {
+        height: auto;
+        aspect-ratio: 3 / 4;
+      }
+
+      .product-info {
+        padding: 19px;
+      }
+
+      .product-meta {
+        gap: 12px;
+      }
+
+      .add-cart {
+        min-height: 46px;
+        flex: 1;
+      }
+
+      .safety-grid {
+        gap: 35px;
+      }
+
+      .safety-list {
+        grid-template-columns: 1fr;
+      }
+
+      form {
+        grid-template-columns: 1fr;
+        padding: 30px 22px;
+      }
+
+      .field {
+        grid-column: 1 / -1;
+      }
+
+      .contact-info {
+        padding: 35px 25px;
+      }
+
+      .cart-drawer {
+        width: 100%;
+      }
+
+      .cart-head {
+        padding-top: max(18px, env(safe-area-inset-top));
+      }
+
+      .cart-footer {
+        padding-bottom: max(20px, env(safe-area-inset-bottom));
+      }
+
+      .mobile-cta {
+        display: flex;
+        position: fixed;
+        left: 14px;
+        right: 14px;
+        bottom: calc(75px + env(safe-area-inset-bottom));
+        z-index: 89;
+        min-height: 52px;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        background: var(--red);
+        border-radius: 5px;
+        font-weight: 900;
+        box-shadow: 0 12px 28px rgba(120, 0, 6, .32);
+      }
+
+      .toast {
+        right: 14px;
+        left: 14px;
+        bottom: 145px;
+        text-align: center;
+      }
+
+      .mobile-nav {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 90;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        min-height: calc(68px + env(safe-area-inset-bottom));
+        padding: 6px 5px env(safe-area-inset-bottom);
+        background: rgba(255, 255, 255, .98);
+        border-top: 1px solid #ddd;
+        box-shadow: 0 -8px 25px rgba(0, 0, 0, .11);
+        backdrop-filter: blur(12px);
+      }
+
+      .mobile-nav a,
+      .mobile-nav button {
+        position: relative;
+        display: grid;
+        place-items: center;
+        align-content: center;
+        gap: 1px;
+        min-width: 0;
+        min-height: 56px;
+        padding: 3px 1px;
+        border: 0;
+        color: #666;
+        background: transparent;
+        font-size: .56rem;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .mobile-nav a.active {
+        color: var(--red);
+      }
+
+      .mobile-icon {
+        font-size: 1.25rem;
+        line-height: 1;
+      }
+
+      .mobile-cart-count {
+        position: absolute;
+        top: 1px;
+        left: 55%;
+        display: grid;
+        place-items: center;
+        min-width: 18px;
+        height: 18px;
+        padding: 0 4px;
+        border: 2px solid #fff;
+        border-radius: 99px;
+        color: #fff;
+        background: var(--red);
+        font-size: .55rem;
+      }
+
+      .neon-frame.top,
+      .neon-frame.bottom {
+        height: 7px;
+      }
+
+      .neon-frame.left,
+      .neon-frame.right {
+        width: 7px;
+      }
+
+      .neon-corner {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    @media (min-width: 621px) {
+      body {
+        padding-bottom: 78px;
+      }
+
+      .mobile-nav {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 90;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        min-height: 68px;
+        padding: 6px max(18px, calc((100% - 820px) / 2));
+        background: rgba(255, 255, 255, .98);
+        border-top: 1px solid #ddd;
+        box-shadow: 0 -8px 25px rgba(0, 0, 0, .11);
+        backdrop-filter: blur(12px);
+      }
+
+      .mobile-nav a,
+      .mobile-nav button {
+        position: relative;
+        display: grid;
+        place-items: center; 
+        align-content: center;
+        gap: 1px;
+        min-height: 56px;
+        border: 0;
+        color: #666;
+        background: transparent;
+        font-size: .62rem;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .mobile-nav a.active {
+        color: var(--red);
+      }
+
+      .mobile-icon {
+        font-size: 1.25rem;
+        line-height: 1;
+      }
+
+      .mobile-cart-count {
+        position: absolute;
+        top: 1px;
+        left: 53%;
+        display: grid;
+        place-items: center;
+        min-width: 18px;
+        height: 18px;
+        padding: 0 4px;
+        border: 2px solid #fff;
+        border-radius: 99px;
+        color: #fff;
+        background: var(--red);
+        font-size: .55rem;
+      }
+    }
+    /* Identidad Fuego Patrio */
+    :root{--red:#ed2424;--red-dark:#b90f1b;--white:#fffdf4;--ink:#102116;--muted:#4f5b52;--line:#e2d79e;--green:#07823f;--green-dark:#055b2d;--yellow:#ffd51f;--shadow:0 18px 50px rgba(50,50,0,.18);--neon-glow:0 8px 26px rgba(237,36,36,.3)}
+    body{background:var(--yellow)}#patriaSky{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;background:linear-gradient(145deg,#ffe659,#ffd01b)}
+    header{background:rgba(6,107,52,.96);border-bottom:4px solid var(--yellow);color:white}.logo b{color:var(--yellow)}.logo-mark{background:var(--red);box-shadow:5px 5px 0 var(--yellow)}.nav-links a:not(.nav-cta)::after{background:var(--yellow)}.nav-cta{background:var(--red);border:2px solid white}.cart-trigger{background:white;border-color:var(--yellow);color:var(--green-dark)}.cart-count{background:var(--red)}
+    .ticker{background:var(--red);color:white;border-block:5px solid var(--yellow)}.ticker span::after{color:var(--yellow)}
+    .hero{background:linear-gradient(112deg,rgba(255,253,244,.93) 0 49%,rgba(255,213,31,.91) 49% 70%,rgba(7,130,63,.92) 70% 100%);border-bottom:12px solid var(--red)}.hero h1 span,.eyebrow{color:var(--green)}.eyebrow::before{background:var(--red)}.presentation-label{background:var(--red)}.btn-primary{background:var(--green);box-shadow:6px 6px 0 var(--yellow)}.btn-primary:hover{background:var(--green-dark)}.red-panel{background:rgba(237,36,36,.76);border:5px solid white;box-shadow:14px 14px 0 var(--green);transform:rotate(4deg)}.spark-core{background:var(--yellow);box-shadow:0 0 50px 18px white}.visual-card{border-color:var(--green);box-shadow:8px 8px 0 var(--red)}.visual-card strong{color:var(--green)}
+    .features{background:var(--yellow);border-color:var(--ink)}.feature{border-color:rgba(16,33,22,.25)}.feature-icon{color:var(--red)}.products{background:rgba(255,253,244,.95)}.section-title span,.product-category{color:var(--green)}.filter-btn.active,.filter-btn:hover{background:var(--green);border-color:var(--green)}.product-card{border:3px solid var(--ink);box-shadow:7px 7px 0 var(--yellow)}.product-card:nth-child(4n+1) .product-art{background:linear-gradient(145deg,#ffd51f,#fff4a8)}.product-card:nth-child(4n+2) .product-art{background:linear-gradient(145deg,#ed2424,#ff8d7f)}.product-card:nth-child(4n+3) .product-art{background:linear-gradient(145deg,#07823f,#79d59c)}.product-card:nth-child(4n+4) .product-art{background:linear-gradient(145deg,#ffffff,#f4efd9)}.product-card:hover{border-color:var(--red);box-shadow:11px 12px 0 var(--green)}.tag,.add-cart{background:var(--red)}
+    .safety{background:linear-gradient(135deg,var(--green),var(--green-dark));border-block:12px solid var(--yellow)}.contact{background:var(--yellow)}.contact-box{border:4px solid var(--ink);box-shadow:12px 12px 0 var(--red)}.contact-info{background:var(--red)}footer{background:var(--green-dark);border-top:8px solid var(--yellow)}
+    .neon-frame.top,.neon-frame.bottom{background:repeating-linear-gradient(90deg,var(--green) 0 45px,white 45px 90px,var(--red) 90px 135px,var(--yellow) 135px 180px)}.neon-frame.left,.neon-frame.right{background:repeating-linear-gradient(0deg,var(--green) 0 45px,white 45px 90px,var(--red) 90px 135px,var(--yellow) 135px 180px)}
+    /* Refuerzo rojo solicitado */
+    body{background:#ed2424}
+    #patriaSky{background:linear-gradient(145deg,#ffef67 0%,#ffd51f 44%,#ed2424 100%)}
+    header{background:rgba(185,15,27,.97);border-bottom:6px solid white}.logo b{color:#ffd51f}.nav-links a:not(.nav-cta)::after{background:white}.nav-cta{background:#07823f;box-shadow:5px 5px 0 #ffd51f}.cart-trigger{border-color:white;color:#b90f1b}
+    .ticker{background:#b90f1b;border-color:white}.hero{background:linear-gradient(112deg,rgba(255,253,244,.95) 0 42%,rgba(255,213,31,.92) 42% 62%,rgba(237,36,36,.94) 62% 100%);border-bottom:16px solid #b90f1b}.hero::before{border-color:rgba(255,255,255,.24)}.red-panel{background:rgba(185,15,27,.92);box-shadow:14px 14px 0 #ffd51f}.presentation-label,.tag,.add-cart{background:#ed2424}.btn-primary{background:#ed2424;box-shadow:6px 6px 0 #07823f}.btn-primary:hover{background:#b90f1b}
+    .features{border-block:8px solid #ed2424}.products{border-top:14px solid #ed2424}.product-card:nth-child(4n+1) .product-art,.product-card:nth-child(4n+2) .product-art{background:linear-gradient(145deg,#ed2424,#ff8476)}.product-card:nth-child(4n+3){border-color:#ed2424}.product-card:nth-child(4n+4){box-shadow:7px 7px 0 #ed2424}.filter-btn.active,.filter-btn:hover{background:#ed2424;border-color:#ed2424}.safety{background:linear-gradient(135deg,#ed2424,#9d0b16);border-color:#ffd51f}.contact{background:linear-gradient(135deg,#ffd51f 0 55%,#ed2424 55% 100%)}.contact-info{background:#b90f1b}footer{background:#b90f1b;border-top-color:white}
+    /* Identidad inspirada en la fachada de Pirotecnia MAGIC */
+    :root{--red:#f2383f;--red-dark:#b8172c;--green:#0a8448;--green-dark:#07572f;--yellow:#ffc928;--white:#fffaf0;--ink:#241713}
+    #patriaSky{background:linear-gradient(135deg,#f2383f 0%,#ff5a49 48%,#d51f38 100%)}
+    body{background:#f2383f}.neon-frame.top,.neon-frame.bottom{background:repeating-linear-gradient(90deg,#ffc928 0 40px,#0a8448 40px 80px,#fffaf0 80px 120px,#f2383f 120px 160px)}.neon-frame.left,.neon-frame.right{background:repeating-linear-gradient(0deg,#ffc928 0 40px,#0a8448 40px 80px,#fffaf0 80px 120px,#f2383f 120px 160px)}
+    header{background:rgba(8,91,49,.97);border-bottom:6px solid #ffc928;box-shadow:0 8px 0 #b8172c}.logo-mark{border:3px solid #ffc928}.nav-cta{background:#f2383f}.ticker{background:#ffc928;color:#241713;border-color:#0a8448}.ticker span::after{color:#f2383f}
+    .hero{background:linear-gradient(105deg,rgba(255,250,240,.96) 0 40%,rgba(242,56,63,.94) 40% 72%,rgba(10,132,72,.94) 72% 100%);border-bottom:18px solid #ffc928}.hero::after{border-color:rgba(255,201,40,.35)}.hero h1{font-size:clamp(4rem,8vw,7.4rem);text-shadow:4px 4px 0 #ffc928}.hero h1 span{color:#f2383f}.hero-logo-slot{min-height:145px;border:7px double #ffc928;background:#0a8448;box-shadow:10px 10px 0 #f2383f;transform:rotate(-1deg)}.logo-placeholder{position:relative;color:#ffc928;font-size:clamp(1.8rem,4vw,3.7rem);font-weight:900;text-shadow:3px 3px 0 #b8172c;letter-spacing:-.04em}.logo-placeholder small{color:white;font-size:.72rem;letter-spacing:.1em}.red-panel{background:repeating-linear-gradient(135deg,#f2383f 0 28px,#ff655c 28px 56px);border:7px solid #ffc928;box-shadow:16px 16px 0 #0a8448}.spark-core{background:white;box-shadow:0 0 55px 20px #ffc928}.ray{background:linear-gradient(90deg,#fff,#ffc928,transparent)}.visual-card{background:#ffc928;border-color:#241713;box-shadow:9px 9px 0 #f2383f}.visual-card strong{color:#b8172c}
+    .features{background:#ffc928;border-color:#0a8448}.products{background:#fffaf0;border-top-color:#0a8448}.product-card{box-shadow:7px 7px 0 #f2383f}.product-card:nth-child(3n+1) .product-art{background:linear-gradient(140deg,#f2383f,#ff9783)}.product-card:nth-child(3n+2) .product-art{background:linear-gradient(140deg,#0a8448,#73d195)}.product-card:nth-child(3n+3) .product-art{background:linear-gradient(140deg,#ffc928,#fff3a6)}.product-card:hover{box-shadow:12px 13px 0 #ffc928;border-color:#0a8448}.tag,.add-cart{background:#f2383f}.filter-btn.active,.filter-btn:hover{background:#0a8448;border-color:#0a8448}.safety{background:linear-gradient(135deg,#0a8448,#064b29);border-color:#ffc928}.contact{background:linear-gradient(135deg,#ffc928 0 48%,#f2383f 48% 100%)}footer{background:#b8172c;border-top:9px solid #ffc928}
+    /* Cohetes animados visibles por encima de los fondos y detrás del contenido */
+    #patriaSky{z-index:2;background:transparent;opacity:.86}.hero>.container,.products>.container,.features>.container,.safety>.container,.contact>.container,footer>.container{position:relative;z-index:3}.hero,.products,.features,.safety,.contact,footer{isolation:isolate}.hero{background:linear-gradient(105deg,rgba(255,250,240,.9) 0 40%,rgba(242,56,63,.86) 40% 72%,rgba(10,132,72,.88) 72% 100%)}
+    .logo-copy{display:grid;line-height:1.05}.local-badge{display:inline-block;width:max-content;margin-top:5px;padding:3px 7px;background:#ffc928;color:#241713;font-size:.58rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+    .logo-mark.logo-image{width:54px;height:54px;padding:0;overflow:hidden;border-radius:50%;transform:none;background:white;box-shadow:4px 4px 0 #ffc928}.logo-mark.logo-image img{width:100%;height:100%;object-fit:cover;transform:none}.hero-logo-slot.logo-present{width:min(310px,78vw);height:310px;min-height:0;padding:12px;margin-bottom:30px;border-radius:50%;background:#fff;overflow:hidden}.hero-logo-slot.logo-present img{width:100%;height:100%;max-height:none;object-fit:cover;border-radius:50%}.footer-brand{display:flex;align-items:center;gap:12px;font-weight:900}.footer-logo{width:64px;height:64px;border-radius:50%;object-fit:cover;border:3px solid #ffc928;background:white}@media(max-width:600px){.logo-mark.logo-image{width:44px;height:44px}.logo-copy{font-size:.8rem}.hero-logo-slot.logo-present{width:230px;height:230px}.footer-logo{width:52px;height:52px}}
+
+    /* Noche espectacular: negro profundo con luces de feria */
+    :root{--ink:#f7f4ff;--muted:#c8bfd2;--line:rgba(255,255,255,.16);--shadow:0 24px 70px rgba(0,0,0,.48);--neon-glow:0 0 34px rgba(255,48,93,.42)}
+    html{background:#020205}
+    body{background:#020205;color:#fff;position:relative;isolation:isolate}
+    body::before{
+      content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;
+      background:
+        radial-gradient(ellipse at 12% 12%,rgba(0,104,255,.22),transparent 38%),
+        radial-gradient(ellipse at 88% 28%,rgba(255,35,95,.18),transparent 34%),
+        radial-gradient(ellipse at 50% 83%,rgba(113,31,185,.20),transparent 42%),
+        linear-gradient(155deg,#010103 0%,#05040b 38%,#0d0717 62%,#020205 100%);
+    }
+    body::after{
+      content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.45;
+      background-image:
+        radial-gradient(circle at 20% 25%,rgba(255,255,255,.8) 0 1px,transparent 1.7px),
+        radial-gradient(circle at 74% 18%,rgba(255,215,82,.7) 0 1px,transparent 1.8px),
+        radial-gradient(circle at 86% 73%,rgba(137,200,255,.65) 0 1px,transparent 1.7px);
+      background-size:117px 117px,173px 173px,211px 211px;
+    }
+    #patriaSky{z-index:2;opacity:.68;background:transparent;filter:saturate(1.08)}
+    header{background:rgba(3,3,8,.88);border-bottom:2px solid rgba(255,205,40,.72);box-shadow:0 8px 35px rgba(0,0,0,.55)}
+    .ticker{background:linear-gradient(90deg,#170713,#7b102d 50%,#170713);border-color:rgba(255,201,40,.58)}
+    .hero{background:linear-gradient(110deg,rgba(3,3,9,.88),rgba(23,5,30,.76) 52%,rgba(4,20,15,.76));border-bottom:8px solid #ffc928}
+    .hero::before{border-color:rgba(255,202,40,.17)}
+    .hero::after{border-color:rgba(255,54,94,.16)}
+    .hero h1{color:#fff;text-shadow:0 5px 0 #6d091f,0 0 34px rgba(255,199,35,.22)}
+    .hero h1 span,.eyebrow{color:#ffc928}
+    .hero-copy,.hero-notes{color:#e8e0ec}
+    .red-panel{background:linear-gradient(145deg,rgba(93,10,39,.68),rgba(20,5,24,.75));border-color:rgba(255,219,115,.7);box-shadow:0 0 0 2px rgba(255,255,255,.5),13px 14px 0 rgba(7,105,58,.55),0 22px 65px rgba(0,0,0,.42)}
+    .spark-core{background:#fffbe1;box-shadow:0 0 18px 7px rgba(255,255,255,.9),0 0 48px 21px rgba(255,198,25,.42)}
+    .ray{height:2px;opacity:.78;background:linear-gradient(90deg,#fff,#ffc928 34%,rgba(255,46,94,.38) 67%,transparent);filter:drop-shadow(0 0 3px rgba(255,201,40,.7))}
+    .features,.products,.safety,.contact,footer{position:relative;isolation:isolate;background:rgba(4,4,10,.82);color:#fff}
+    .features{border-block:1px solid rgba(255,201,40,.34)}
+    .feature{border-color:rgba(255,255,255,.13)}
+    .products{border-top:1px solid rgba(255,201,40,.32)}
+    .section-title,.section-title span{color:#fff}.section-title span{color:#ffc928;text-shadow:0 0 24px rgba(255,201,40,.28)}
+    .section-copy{color:#cfc6d5}
+    .filter-btn{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.25)}
+    .filter-btn.active,.filter-btn:hover{background:#ed243f;border-color:#ffc928;color:#fff}
+    .product-card{background:linear-gradient(150deg,rgba(24,21,31,.97),rgba(7,7,12,.98));color:#fff;border-color:rgba(255,255,255,.22);box-shadow:0 15px 38px rgba(0,0,0,.34),4px 4px 0 rgba(255,201,40,.42)}
+    .product-card:hover{border-color:rgba(255,201,40,.72);box-shadow:0 20px 50px rgba(0,0,0,.48),5px 5px 0 rgba(237,36,63,.55)}
+    .product-card:nth-child(3n+1) .product-art{background:linear-gradient(145deg,#73122f,#e32b56)}
+    .product-card:nth-child(3n+2) .product-art{background:linear-gradient(145deg,#073d29,#0b9c58)}
+    .product-card:nth-child(3n+3) .product-art{background:linear-gradient(145deg,#5e4100,#ffc928)}
+    .product-description{color:#c9c0ce}
+    .safety{background:linear-gradient(135deg,rgba(3,76,40,.94),rgba(2,24,17,.96));border-color:#ffc928}
+    .contact{background:linear-gradient(135deg,rgba(9,7,16,.96),rgba(55,7,29,.94))}
+    .contact-box{background:#fff;color:#241713;border-color:rgba(255,201,40,.8);box-shadow:0 24px 65px rgba(0,0,0,.42),7px 7px 0 rgba(237,36,63,.62)}
+    .contact-info{background:linear-gradient(145deg,#a60d31,#ed243f);color:#fff}
+    footer{background:#020205;border-top-color:#ffc928}
+    .neon-frame.top,.neon-frame.bottom{background:linear-gradient(90deg,transparent,#ffc928 18%,#ed3453 50%,#45a878 82%,transparent);box-shadow:0 0 12px rgba(255,201,40,.3)}
+    .neon-frame.left,.neon-frame.right{background:linear-gradient(0deg,transparent,#ffc928 18%,#ed3453 50%,#45a878 82%,transparent);box-shadow:0 0 12px rgba(255,201,40,.24)}
+
+    /* Botones integrados al ambiente nocturno */
+    .btn-primary,.nav-cta,.add-cart,.checkout{
+      color:#fff;
+      background:linear-gradient(135deg,#b60f35,#ed3150);
+      border:1px solid rgba(255,213,80,.55);
+      box-shadow:0 9px 24px rgba(181,13,52,.28),inset 0 1px 0 rgba(255,255,255,.2);
+    }
+    .btn-primary:hover,.nav-cta:hover,.add-cart:hover,.checkout:hover:not(:disabled){
+      color:#fff;background:linear-gradient(135deg,#d71843,#ff4964);border-color:#ffc928;box-shadow:0 12px 30px rgba(220,22,64,.38),0 0 15px rgba(255,201,40,.14)
+    }
+    .btn-secondary,.cart-trigger,.menu-btn{
+      color:#fff;
+      background:linear-gradient(145deg,rgba(35,31,49,.92),rgba(12,11,19,.96));
+      border:1px solid rgba(255,210,78,.55);
+      box-shadow:0 8px 22px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.1);
+      backdrop-filter:blur(10px);
+    }
+    .btn-secondary:hover,.cart-trigger:hover,.menu-btn:hover{
+      color:#ffe170;border-color:#ffc928;background:linear-gradient(145deg,rgba(67,25,45,.96),rgba(18,13,24,.98));box-shadow:0 10px 28px rgba(0,0,0,.4),0 0 16px rgba(255,201,40,.12)
+    }
+    .filter-btn{
+      border-radius:8px;background:linear-gradient(145deg,rgba(30,27,42,.92),rgba(11,10,17,.96));box-shadow:inset 0 1px 0 rgba(255,255,255,.07)
+    }
+    .filter-btn.active,.filter-btn:hover{background:linear-gradient(135deg,#8f0d31,#d82748);border-color:#ffc928;box-shadow:0 7px 18px rgba(157,12,50,.26)}
+    .quantity button,.cart-close{
+      color:#fff;background:rgba(255,255,255,.07);border-color:rgba(255,215,95,.4)
+    }
+    .quantity button:hover,.cart-close:hover{background:rgba(237,36,63,.5);border-color:#ffc928}
+    .cart-overlay{z-index:110;background:rgba(0,0,0,.72);backdrop-filter:blur(5px)}
+    .cart-drawer{z-index:120;background:linear-gradient(180deg,#17131f,#08070c);color:#fff;border-left:1px solid rgba(255,201,40,.35);box-shadow:-24px 0 70px rgba(0,0,0,.65)}
+    .cart-head{background:linear-gradient(135deg,#87102f,#cf2645);border-bottom:1px solid rgba(255,219,117,.45)}
+    .cart-items{color:#fff}.empty-cart{color:#bdb3c4}.cart-item{border-color:rgba(255,255,255,.12)}
+    .cart-item-price{color:#ffd75d}.remove-item{color:#ff6d87}.quantity span{color:#fff}
+    .cart-footer{background:#09080d;border-top:1px solid rgba(255,201,40,.28)}
+    .cart-total{color:#fff}.checkout:disabled{background:#28242d;color:#77717c;border-color:#403a47;box-shadow:none}
+    .clear-cart{width:100%;min-height:46px;margin-top:11px;border:1px solid rgba(255,105,129,.6);border-radius:4px;background:rgba(151,18,48,.12);color:#ff899d;font-weight:800;cursor:pointer;transition:.22s}
+    .clear-cart:hover:not(:disabled){background:rgba(198,26,62,.38);border-color:#ff6b85;color:#fff}
+    .clear-cart:disabled{opacity:.38;cursor:not-allowed}
+    .video-btn{width:100%;min-height:44px;margin-top:12px;display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(255,210,78,.6);border-radius:5px;background:linear-gradient(135deg,rgba(117,12,40,.9),rgba(29,18,42,.96));color:#fff;font-size:.78rem;font-weight:900;text-decoration:none;transition:.22s}
+    .video-btn:hover{color:#ffe26d;border-color:#ffc928;transform:translateY(-2px);box-shadow:0 9px 24px rgba(0,0,0,.3),0 0 14px rgba(255,201,40,.12)}
+  </style>
+</head>
+
+<body>
+  <canvas id="patriaSky" aria-hidden="true"></canvas>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <div class="neon-frame top"></div>
+  <div class="neon-frame right"></div>
+  <div class="neon-frame bottom"></div>
+  <div class="neon-frame left"></div>
+
+  <div class="neon-corner tl"></div>
+  <div class="neon-corner tr"></div>
+  <div class="neon-corner bl"></div>
+  <div class="neon-corner br"></div>
+
+  <header>
+    <nav class="container">
+      <a class="logo" href="#inicio">
+        <span class="logo-mark logo-image"><img src="logo.jpeg" alt="Logo de Pirotecnia MAGIC"></span>
+        <span class="logo-copy">PIROTECNIA <b>MAGIC</b><small class="local-badge">Local 222</small></span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Catálogo</a>
+        <a href="#seguridad">Seguridad</a>
+        <a href="#contacto">Contacto</a>
+        <a class="nav-cta" href="#contacto">Solicitar cotización</a>
+      </div>
+
+      <button
+        class="cart-trigger"
+        id="cartTrigger"
+        type="button"
+        aria-label="Abrir carrito"
+      >
+        🛒 Carrito
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        type="button"
+        aria-label="Abrir menú"
+      >
+        ☰
+      </button>
+    </nav>
+  </header>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Luz</span>
+      <span>Color</span>
+      <span>Celebración</span>
+      <span>Momentos inolvidables</span>
+      <span>Pirotecnia MAGIC</span>
+      <span>Local 222</span>
+      <span>Luz</span>
+      <span>Color</span>
+      <span>Celebración</span>
+      <span>Momentos inolvidables</span>
+      <span>Pirotecnia MAGIC</span>
+      <span>Local 222</span>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-logo-slot logo-present">
+            <img src="logo.jpeg" alt="Logo oficial de Pirotecnia MAGIC">
+          </div>
+
+          <span class="presentation-label">Presentación oficial</span>
+          <br>
+
+          <span class="eyebrow">Pirotecnia MAGIC · Local 222</span>
+
+          <h1>
+            Una explosión de <span>color.</span>
+          </h1>
+
+          <p>
+            Pirotecnia seleccionada para celebraciones espectaculares.
+            Atención profesional, productos certificados y orientación para
+            un uso seguro y responsable.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn-primary" href="#productos">
+              Ver catálogo <span>→</span>
+            </a>
+
+            <a class="btn-secondary" href="#contacto">
+              Contáctanos
+            </a>
+          </div>
+
+          <div class="hero-notes">
+            <span>Productos certificados</span>
+            <span>Asesoría especializada</span>
+          </div>
+        </div>
+
+        <div
+          class="hero-visual"
+          aria-label="Ilustración abstracta de un fuego artificial"
+        >
+          <div class="red-panel"></div>
+
+          <div class="firework" id="firework">
+            <div class="spark-core"></div>
+          </div>
+
+          <div class="visual-card">
+            <strong>+10</strong>
+            <small>años encendiendo tus mejores momentos</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container feature-grid">
+        <div class="feature">
+          <span class="feature-icon">✦</span>
+          <div>
+            <strong>Calidad premium</strong>
+            <small>Selección profesional</small>
+          </div>
+        </div>
+
+        <div class="feature">
+          <span class="feature-icon">✓</span>
+          <div>
+            <strong>Compra responsable</strong>
+            <small>Orientación para un uso seguro</small>
+          </div>
+        </div>
+
+        <div class="feature">
+          <span class="feature-icon">⌖</span>
+          <div>
+            <strong>Entrega local</strong>
+            <small>Consulta zonas disponibles</small>
+          </div>
+        </div>
+
+        <div class="feature">
+          <span class="feature-icon">◉</span>
+          <div>
+            <strong>Atención directa</strong>
+            <small>Asesoría personalizada</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="productos">
+      <div class="container">
+        <div class="products-head reveal">
+          <div>
+            <span class="eyebrow">Nuestro catálogo</span>
+
+            <h2 class="section-title">
+              Elige tu próxima <span>experiencia.</span>
+            </h2>
+
+            <p class="section-copy">
+              Opciones para reuniones, celebraciones y eventos.
+              Disponibilidad sujeta a normativa y existencias.
+            </p>
+          </div>
+
+          <div class="filters">
+            <button class="filter-btn active" data-filter="all">
+              Todos
+            </button>
+
+            <button class="filter-btn" data-filter="luz">
+              💡 Luz
+            </button>
+
+            <button class="filter-btn" data-filter="color">
+              🎨 Color
+            </button>
+
+            <button class="filter-btn" data-filter="trueno">
+              💥 Trueno fuerte
+            </button>
+
+            <button class="filter-btn" data-filter="baterias">
+              🎆 Baterías
+            </button>
+          </div>
+        </div>
+
+        <div class="catalog-tools">
+          <label class="search-box">
+            <span>⌕</span>
+            <input
+              id="productSearch"
+              type="search"
+              placeholder="Buscar entre 100 productos..."
+              autocomplete="off"
+            >
+          </label>
+
+          <div class="result-count" id="resultCount">
+            Mostrando 100 productos
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section class="safety" id="seguridad">
+      <div class="container safety-grid">
+        <div class="reveal">
+          <span class="eyebrow">Primero la seguridad</span>
+
+          <h2 class="section-title">
+            Celebra con responsabilidad.
+          </h2>
+
+          <p class="section-copy">
+            Sigue siempre las instrucciones de cada producto, respeta las
+            distancias recomendadas y consulta las reglas de tu localidad.
+          </p>
+        </div>
+
+        <div class="safety-list reveal">
+          <div class="safety-item">
+            <span>↔</span>
+            <strong>Mantén distancia</strong>
+            <small>Respeta el perímetro indicado.</small>
+          </div>
+
+          <div class="safety-item">
+            <span>♨</span>
+            <strong>Zona despejada</strong>
+            <small>Evita vegetación y materiales inflamables.</small>
+          </div>
+
+          <div class="safety-item">
+            <span>☂</span>
+            <strong>Evita humedad</strong>
+            <small>Conserva el producto seco y cerrado.</small>
+          </div>
+
+          <div class="safety-item">
+            <span>◎</span>
+            <strong>Sigue las instrucciones</strong>
+            <small>No modifiques ni reutilices productos.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="container">
+        <div class="contact-box reveal">
+          <div class="contact-info">
+            <span class="eyebrow">Hablemos</span>
+
+            <h2>Prepara una celebración memorable.</h2>
+
+            <p>
+              Cuéntanos qué tipo de evento estás organizando y te orientaremos
+              sobre las opciones disponibles.
+            </p>
+
+            <div class="contact-detail">
+              <div>
+                <span>●</span>
+                <small>
+                  <b>Teléfono / WhatsApp</b><br>
+                  +52 55 4992 8206
+                </small>
+              </div>
+
+              <div>
+                <span>●</span>
+                <small>
+                  <b>Ubicación</b><br>
+                  Local 222
+                </small>
+              </div>
+
+              <div>
+                <span>●</span>
+                <small>
+                  <b>Horario</b><br>
+                  Lun–Sáb · 10:00–19:00
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <form id="contactForm">
+            <div class="field">
+              <label for="name">Nombre</label>
+              <input id="name" required placeholder="Tu nombre">
+            </div>
+
+            <div class="field">
+              <label for="phone">Teléfono</label>
+              <input
+                id="phone"
+                required
+                type="tel"
+                placeholder="Tu teléfono"
+              >
+            </div>
+
+            <div class="field full">
+              <label for="event">Tipo de evento</label>
+              <input
+                id="event"
+                placeholder="Cumpleaños, boda, celebración..."
+              >
+            </div>
+
+            <div class="field full">
+              <label for="message">Mensaje</label>
+              <textarea
+                id="message"
+                placeholder="Cuéntanos qué estás buscando"
+              ></textarea>
+            </div>
+
+            <button class="btn-primary" type="submit">
+              Enviar solicitud →
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <a class="footer-brand" href="#inicio">
+        <img class="footer-logo" src="magic-logo.jpeg" alt="Pirotecnia MAGIC">
+        <span>PIROTECNIA <b>MAGIC</b><br>LOCAL 222</span>
+      </a>
+
+      <p>
+        La comercialización y el uso de pirotecnia deben cumplir las leyes y
+        permisos de cada localidad. © <span id="year"></span> Pirotecnia MAGIC.
+      </p>
+    </div>
+  </footer>
+
+  <nav class="mobile-nav" aria-label="Navegación inferior">
+    <a href="#inicio" class="active">
+      <span class="mobile-icon">⌂</span>
+      <span>Inicio</span>
+    </a>
+
+    <a href="#productos">
+      <span class="mobile-icon">▦</span>
+      <span>Catálogo</span>
+    </a>
+
+    <a href="#seguridad">
+      <span class="mobile-icon">✓</span>
+      <span>Seguridad</span>
+    </a>
+
+    <a href="#contacto">
+      <span class="mobile-icon">✉</span>
+      <span>Contacto</span>
+    </a>
+
+    <button id="mobileCartTrigger" type="button">
+      <span class="mobile-icon">🛒</span>
+      <span>Carrito</span>
+      <span class="mobile-cart-count" id="mobileCartCount">0</span>
+    </button>
+  </nav>
+
+  <a class="mobile-cta" href="#contacto">
+    Solicitar cotización →
+  </a>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <aside
+    class="cart-drawer"
+    id="cartDrawer"
+    aria-label="Carrito de compras"
+    aria-hidden="true"
+  >
+    <div class="cart-head">
+      <h2>Tu carrito</h2>
+
+      <button
+        class="cart-close"
+        id="cartClose"
+        type="button"
+        aria-label="Cerrar carrito"
+      >
+        ×
+      </button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total estimado</span>
+        <span id="cartTotal">$0 MXN</span>
+      </div>
+
+      <button class="checkout" id="checkoutButton" type="button" disabled>
+        Enviar pedido
+      </button>
+
+      <button class="clear-cart" id="clearCartButton" type="button" disabled>
+        Vaciar carrito
+      </button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    (() => {
+      const canvas = document.querySelector("#patriaSky");
+      const context = canvas.getContext("2d");
+      const palette = ["#ff3158", "#14e889", "#ffffff", "#ffd51f", "#36a8ff", "#b85cff"];
+      let width, height, ratio, rockets = [], sparks = [], rings = [], previousLaunch = 0;
+
+      function resizeSky() {
+        ratio = Math.min(window.devicePixelRatio || 1, 2);
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width * ratio;
+        canvas.height = height * ratio;
+        context.setTransform(ratio, 0, 0, ratio, 0, 0);
+      }
+
+      function launchRocket() {
+        rockets.push({
+          x: 30 + Math.random() * (width - 60),
+          y: height + 20,
+          vx: (Math.random() - .5) * 1.8,
+          vy: -8 - Math.random() * 4,
+          target: height * (.1 + Math.random() * .52),
+          color: palette[Math.floor(Math.random() * palette.length)],
+          accent: palette[Math.floor(Math.random() * palette.length)],
+          scale: .75 + Math.random() * .65,
+          tilt: (Math.random() - .5) * .22
+        });
+      }
+
+      function drawRocket(rocket) {
+        context.save();
+        context.translate(rocket.x, rocket.y);
+        const trail = context.createLinearGradient(0, 0, 0, 92);
+        trail.addColorStop(0, "rgba(255,255,255,.9)");
+        trail.addColorStop(.22, rocket.color);
+        trail.addColorStop(1, "rgba(255,255,255,0)");
+        context.strokeStyle = trail;
+        context.lineWidth = 2.2 * rocket.scale;
+        context.shadowColor = rocket.color;
+        context.shadowBlur = 9;
+        context.beginPath();
+        context.moveTo(0, 1);
+        context.quadraticCurveTo(-rocket.vx * 6, 42, rocket.vx * 2, 88);
+        context.stroke();
+        context.fillStyle = "rgba(255,255,255,.95)";
+        context.beginPath();
+        context.arc(0, 0, 1.8 * rocket.scale, 0, Math.PI * 2);
+        context.fill();
+        context.restore();
+      }
+
+      function explode(rocket) {
+        const total = 34 + Math.floor(Math.random() * 24);
+        rings.push({x:rocket.x,y:rocket.y,radius:3,life:1,color:rocket.color});
+        for (let index = 0; index < total; index++) {
+          const angle = Math.PI * 2 * index / total;
+          const speed = 1.8 + Math.random() * 4.6;
+          const color = index % 4 === 0 ? rocket.accent : rocket.color;
+          sparks.push({x: rocket.x, y: rocket.y, vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed, life: .82, size: .9 + Math.random() * 2.2, color});
+        }
+      }
+
+      function animateSky(time) {
+        context.clearRect(0, 0, width, height);
+        if (time - previousLaunch > 760 + Math.random() * 760) {
+          launchRocket();
+          if (Math.random() > .76) launchRocket();
+          previousLaunch = time;
+        }
+        rockets.forEach((rocket, index) => {
+          rocket.x += rocket.vx; rocket.y += rocket.vy; rocket.vy += .035;
+          drawRocket(rocket);
+          if (rocket.y <= rocket.target || rocket.vy > 0) { explode(rocket); rockets.splice(index, 1); }
+        });
+        sparks.forEach((spark, index) => {
+          spark.x += spark.vx; spark.y += spark.vy; spark.vy += .045; spark.vx *= .991; spark.life -= .014;
+          context.globalAlpha = Math.max(0, spark.life);
+          context.strokeStyle = spark.color; context.lineWidth = Math.max(.7,spark.size * spark.life);
+          context.shadowColor = spark.color; context.shadowBlur = 8;
+          context.beginPath(); context.moveTo(spark.x,spark.y); context.lineTo(spark.x-spark.vx*2.3,spark.y-spark.vy*2.3); context.stroke();
+          context.fillStyle = "#fff"; context.beginPath(); context.arc(spark.x, spark.y, Math.max(.7,spark.size*.48), 0, Math.PI * 2); context.fill();
+          if (spark.life <= 0) sparks.splice(index, 1);
+        });
+        rings.forEach((ring,index)=>{
+          ring.radius += 2.6; ring.life -= .055;
+          context.globalAlpha=Math.max(0,ring.life)*.34; context.strokeStyle=ring.color; context.lineWidth=1.4; context.shadowColor=ring.color; context.shadowBlur=10;
+          context.beginPath(); context.arc(ring.x,ring.y,ring.radius,0,Math.PI*2); context.stroke();
+          if(ring.life<=0) rings.splice(index,1);
+        });
+        context.globalAlpha = 1; context.shadowBlur = 0;
+        requestAnimationFrame(animateSky);
+      }
+
+      resizeSky();
+      window.addEventListener("resize", resizeSky);
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) requestAnimationFrame(animateSky);
+    })();
+
+    const categories = {
+      luz: {
+        label: "Luz",
+        symbol: "✨",
+        description: "Efecto luminoso ideal para celebraciones.",
+        basePrice: 45
+      },
+
+      color: {
+        label: "Color",
+        symbol: "🌈",
+        description: "Destellos de colores vivos para iluminar la noche.",
+        basePrice: 65
+      },
+
+      trueno: {
+        label: "Trueno fuerte",
+        symbol: "💥",
+        description: "Efecto sonoro intenso para celebraciones especiales.",
+        basePrice: 85
+      },
+
+      baterias: {
+        label: "Baterías",
+        symbol: "🎆",
+        description: "Secuencia completa de efectos de luz, color y sonido.",
+        basePrice: 220
+      }
+    };
+
+    const productNames = {
+      luz: [
+        "Bengala Diamante",
+        "Estrella Blanca",
+        "Luz de Luna",
+        "Chispa Imperial",
+        "Fuente Plateada",
+        "Lucero Nocturno",
+        "Destello Polar",
+        "Bengala Premium",
+        "Cascada Blanca",
+        "Lluvia de Estrellas",
+        "Antorcha Lunar",
+        "Brillo Real",
+        "Fuente Cristal",
+        "Estrella Fugaz",
+        "Chispa Elegante",
+        "Luz del Cielo",
+        "Destello Nevado",
+        "Corona Plateada",
+        "Bengala Gigante",
+        "Lágrima de Luz",
+        "Cometa Blanco",
+        "Resplandor Lunar",
+        "Fuente Nevada",
+        "Chispa Celestial",
+        "Luz Infinita"
+      ],
+
+      color: [
+        "Arcoíris Mágico",
+        "Palmera Multicolor",
+        "Dragón de Colores",
+        "Fuente Tropical",
+        "Cometa Rojo",
+        "Estrella Violeta",
+        "Cascada Esmeralda",
+        "Lluvia Rubí",
+        "Corona Azul",
+        "Jardín de Color",
+        "Rueda Arcoíris",
+        "Mariposa Neon",
+        "Volcán Multicolor",
+        "Fiesta Tropical",
+        "Aurora Boreal",
+        "Flor de Colores",
+        "Estrella Mexicana",
+        "Cielo de Colores",
+        "Fuente Camaleón",
+        "Cometa Dorado",
+        "Lluvia Multicolor",
+        "Palmera Fantasía",
+        "Destello Rosa",
+        "Dragón Esmeralda",
+        "Festival de Color"
+      ],
+
+      trueno: [
+        "Trueno Titán",
+        "Impacto Supremo",
+        "Cañón Nocturno",
+        "Trueno Imperial",
+        "Explosión Máxima",
+        "Titán Rojo",
+        "Golpe del Cielo",
+        "Cañón Gigante",
+        "Trueno Legendario",
+        "Impacto Nocturno",
+        "Furia del Dragón",
+        "Trueno Extremo",
+        "Cañón de Acero",
+        "Impacto Real",
+        "Titán del Cielo",
+        "Trueno Poderoso",
+        "Golpe Imperial",
+        "Cañón Supremo",
+        "Furia Nocturna",
+        "Impacto Titán",
+        "Trueno Centella",
+        "Cañón Especial",
+        "Explosión Imperial",
+        "Trueno Maestro",
+        "Impacto Final"
+      ],
+
+      baterias: [
+        "Batería Gran Fiesta",
+        "Batería Noche Mágica",
+        "Batería Celebración",
+        "Batería Imperial",
+        "Batería Festival",
+        "Batería Dragón",
+        "Batería Suprema",
+        "Batería Multicolor",
+        "Batería Estelar",
+        "Batería Gran Final",
+        "Batería Tormenta",
+        "Batería Fantasía",
+        "Batería Aurora",
+        "Batería Diamante",
+        "Batería Titán",
+        "Batería Cielo Rojo",
+        "Batería Paraíso",
+        "Batería Espectáculo",
+        "Batería Profesional",
+        "Batería Centenario",
+        "Batería Corona",
+        "Batería Leyenda",
+        "Batería Infinita",
+        "Batería Mega Show",
+        "Batería Fiesta Patria"
+      ]
+    };
+    let products = [];
+
+    Object.entries(productNames).forEach(([category, names]) => {
+      names.forEach((name, index) => {
+        const information = categories[category];
+
+        products.push({
+          id: products.length + 1,
+          name,
+          category,
+          categoryLabel: information.label,
+          symbol: information.symbol,
+          description: information.description,
+          price:
+            information.basePrice +
+            index * (category === "baterias" ? 85 : 10)
+        });
+      });
+    });
+
+    /* Nombrar los cien productos de forma consecutiva. */
+    products.forEach((product, index) => {
+      product.name = `Producto ${index + 1}`;
+    });
+
+    /* Catálogo real: el número final de cada archivo corresponde al precio. */
+    const realCatalog = [
+      ["Abejita", 50, "abejita50.jpeg", "color"],
+      ["Abejorro Batman", 100, "abejorrobatman100.jpeg", "trueno"],
+      ["Adrenocromo", 60, "adrenocromo60.jpeg", "color"],
+      ["Adventure Time", 40, "adventuretime40.jpeg", "color"],
+      ["Batalla Naval", 350, "batallanaval350.jpeg", "baterias"],
+      ["Batería Humo de Color de Día", null, "bateriahumodecolordedia.jpeg", "baterias"],
+      ["Bazuca Cacahuata 3 Pulgadas", 250, "bazucacacahuata3pulgadas250.jpeg", "trueno"],
+      ["Bazuca Pulpo 2 Pulgadas", 180, "bazucapulpo2pulgadas180.jpeg", "trueno"],
+      ["Bazuca Pulpo 3 Pulgadas", 280, "bazucapulpo3pulgadas280.jpeg", "trueno"],
+      ["Billete", 35, "billete35.jpeg", "trueno"],
+      ["Bola de Humo El Micky", 120, "boladehumoelmicky120.jpeg", "color"],
+      ["Camelias", 15, "camelias15.jpeg", "color"],
+      ["Charro Volador", 60, "charrovolador60.jpeg", "color"],
+      ["Chupacabras", 50, "chupacabras50.jpeg", "trueno"],
+      ["Confeti de Luz", 500, "confetideluz500.jpeg", "luz"],
+      ["Cracker Walking Dead", 45, "crackerwalkingdead45.jpeg", "trueno"],
+      ["Crisantemo", 150, "crisantemo150.jpeg", "color"],
+      ["Dólar", 35, "dolar35.jpeg", "trueno"],
+      ["Enano Espacial", 100, "enanoespacial100.jpeg", "color"],
+      ["Escupidor de Diamantina", 50, "escuidordediamantina50.jpeg", "color"],
+      ["Escupidor", 35, "escupidor35.jpeg", "trueno"],
+      ["Esferas del Dragón", 60, "esferasdeldragon60.jpeg", "color"],
+      ["Flash", 140, "flash140.jpeg", "luz"],
+      ["Gotita", 45, "gotita45.jpeg", "trueno"],
+      ["Grito de Satanás", 70, "gritodesatanas70.jpeg", "trueno"],
+      ["Huevo de Codorniz", 70, "heuvodecodorniz70.jpeg", "trueno"],
+      ["Kake 25 Disparos", 400, "kake25disparos400.jpeg", "baterias"],
+      ["Labubu", 35, "labubu35.jpeg", "color"],
+      ["Luciérnagas", 35, "luciernagas35.jpeg", "luz"],
+      ["Mamut", 35, "mamut35.jpeg", "trueno"],
+      ["Medianoche", 500, "medianoche500.jpeg", "baterias"],
+      ["Mini Garra", 70, "minigarra70.jpeg", "color"],
+      ["Mini Hulk", 70, "minihulk70.jpeg", "color"],
+      ["Minion", 95, "minion95.jpeg", "color"],
+      ["Mini OVNI", 35, "miniovni35.jpeg", "color"],
+      ["Misil", 95, "misil95.jpeg", "color"],
+      ["Mosaico", 60, "mosaico60.jpeg", "color"],
+      ["Mosaico Grande", 60, "mosaicogrande60.jpeg", "color"],
+      ["Olaf", 95, "olaf95.jpeg", "color"],
+      ["Ollita", 25, "olllita25.jpeg", "color"],
+      ["Paleta de Luz", 40, "paletadeluz40.jpeg", "luz"],
+      ["Paloma de Luz", 70, "palomadeluz70.jpeg", "luz"],
+      ["Peppa Pig", 40, "peppapig40.jpeg", "color"],
+      ["Play-Doh", 35, "playdohh35.jpeg", "color"],
+      ["Pop", 350, "pop350.jpeg", "trueno"],
+      ["Ratón", null, "raton.jpeg", "trueno"],
+      ["Ratón Cometín", 70, "ratoncometin70.jpeg", "trueno"],
+      ["Ratón Especial", null, "ratonespecial.jpeg", "trueno"],
+      ["Reguilete", 60, "reguilete60.jpeg", "color"],
+      ["Remolino", 500, "remolino500.jpeg", "baterias"],
+      ["Revelación", 1500, "revelacion1500.jpeg", "baterias"],
+      ["Rosa", 120, "rosa120.jpeg", "luz"],
+      ["Rosa Cracker de Luz", 140, "rosacrackerdeluz140.jpeg", "luz"],
+      ["Silbato de Piso", 60, "silbatodepiso60.jpeg", "trueno"],
+      ["Sonajas Bebé", 60, "sonajasbebe60.jpeg", "color"],
+      ["Súper Cometín", 50, "supercomitin50.jpeg", "trueno"],
+      ["Súper Kake", 80, "superkake80.jpeg", "baterias"],
+      ["Tamalito", 40, "tamalito40.jpeg", "trueno"],
+      ["Tormenta Luminosa", 40, "tormentaluminosa40.jpeg", "luz"],
+      ["Tornado", 45, "tornado45.jpeg", "color"],
+      ["Toro Loco", 100, "toroloco100.jpeg", "trueno"],
+      ["Trabuco Carnaval", 85, "trabucocarnaval85.jpeg", "trueno"],
+      ["Trabuco El Micky", null, "trabucoelmicky.jpeg", "trueno"],
+      ["Trabuco Especial El Micky", 70, "trabucoespecialelmicky70.jpeg", "trueno"],
+      ["Un Buen Tamal", 70, "unbuentamal70.jpeg", "trueno"],
+      ["Vara de Luz", 100, "varadeluz100.jpeg", "luz"],
+      ["Vara de Luz Esfera", 100, "varadeluzesfera100.jpeg", "luz"],
+      ["Vara Pajarera", null, "varapajarera.jpeg", "luz"],
+      ["Vara Pajarera de Luz", 70, "varapajareradeluz70.jpeg", "luz"],
+      ["Vara Urba", 80, "varaurba80.jpeg", "trueno"],
+      ["Varita Mágica", 40, "varitamagica40.jpeg", "luz"],
+      ["Cake Amazonas", null, "cakeamazonas100tiros.jpeg", "baterias", 100],
+      ["Cake Armonía", null, "cakearmonia19tiros.jpeg", "baterias", 19],
+      ["Cake Azteca", null, "cakeazteca36tiros.jpeg", "baterias", 36],
+      ["Cake Big Bang", null, "cakebigbang49tiros.jpeg", "baterias", 49],
+      ["Cake Bolero", null, "cakebolero25tiros.jpeg", "baterias", 25],
+      ["Cake Bora Bora", null, "cakeborabora16tiros.jpeg", "baterias", 16],
+      ["Cake Brasil", null, "cakebrasil19tiros.jpeg", "baterias", 19],
+      ["Cake Brillante", null, "cakebrillante100tiros.jpeg", "baterias", 100],
+      ["Cake Celebración", null, "cakecelebracion100tiros.jpeg", "baterias", 100],
+      ["Cake Confeti de Luces", null, "cakeconfetideluces16tiros.jpeg", "baterias", 16],
+      ["Cake Cosmopolitan", null, "cakecosmopolitan30tiros.jpeg", "baterias", 30],
+      ["Cake España", null, "cakeespaña19tiros.jpeg", "baterias", 19],
+      ["Cake Espectacular", null, "cakeespectacular100tiros.jpeg", "baterias", 100],
+      ["Cake Estelar", null, "cakeestelar100tiros.jpeg", "baterias", 100],
+      ["Cake Fantasía", null, "cakefantasia19tiros.jpeg", "baterias", 19],
+      ["Cake Felicidad", null, "cakefelicidad.jpeg", "baterias", 100],
+      ["Cake Feria", null, "cakeferia47tiros.jpeg", "baterias", 47],
+      ["Cake Festival", null, "cakefestival100tiros.jpeg", "baterias", 100],
+      ["Cake Fiesta", null, "cakefiesta100tiros.jpeg", "baterias", 100],
+      ["Cake Fiesta Hawaiana", null, "cakefiestahawaiana30tiros.jpeg", "baterias", 30],
+      ["Cake Fiesta Latina", null, "cakefiestalatina42tiros.jpeg", "baterias", 42],
+      ["Cake Fortuna", null, "cakefortuna19tiros.jpeg", "baterias", 19],
+      ["Cake Happy", null, "cakehappy100tiros.jpeg", "baterias", 100],
+      ["Cake Hawái", null, "cakehawai46tiros.jpeg", "baterias", 46],
+      ["Cake Jackpot", null, "cakejackspot25tiros.jpeg", "baterias", 25],
+      ["Cake Japón", null, "cakejapon19tiros.jpeg", "baterias", 19],
+      ["Cake Las Vegas", null, "cakelasvegas25tiros.jpeg", "baterias", 25],
+      ["Cake Maya", null, "cakemaya36tiros.jpeg", "baterias", 36],
+      ["Cake Medianoche", null, "cakemedianoche.jpeg", "baterias", 16],
+      ["Cake México Power", null, "cakemexicopower.jpeg", "baterias", 100],
+      ["Cake Noche de Fiesta", null, "cakenochedefiesta100tiros.jpeg", "baterias", 100],
+      ["Cake Noche Mágica", null, "cakenochemagica.jpeg", "baterias", 100],
+      ["Cake Olmeca", null, "cakeolmeca36tiros.jpeg", "baterias", 36],
+      ["Cake Paraíso", null, "cakeparaiso100tiros.jpeg", "baterias", 100],
+      ["Cake Póker", null, "cakepoker25tiros.jpeg", "baterias", 25],
+      ["Cake Ranchera", null, "cakeranchera16tiros.jpeg", "baterias", 16],
+      ["Cake Remolinos Multicolor", null, "cakeremolinosmulticolor16tiros.jpeg", "baterias", 16],
+      ["Cake Ruleta", null, "cakeruleta25tiros.jpeg", "baterias", 25],
+      ["Cake Rumba", null, "cakerumba25tiros.jpeg", "baterias", 25],
+      ["Cake Salsa", null, "cakesalsa25tiros.jpeg", "baterias", 25],
+      ["Cake Samba", null, "cakesamba25tiros.jpeg", "baterias", 25],
+      ["Cake Show Verbena", null, "cakeshowberbena314tiros.jpeg", "baterias", 314],
+      ["Cake Show Bravo", null, "cakeshowbravo200tiros.jpeg", "baterias", 200],
+      ["Cake Soldado", null, "cakesolado16tiros.jpeg", "baterias", 16],
+      ["Cake Sonrisas", null, "cakesonrisas19tiros.jpeg", "baterias", 19],
+      ["Cake Storm", null, "cakestrom49tiros.jpeg", "baterias", 49],
+      ["Cake Súper Show", null, "cakesupershow120tiros.jpeg", "baterias", 120],
+      ["Cake Tequila", null, "caketequila16tiros.jpeg", "baterias", 16],
+      ["Cake Tornado", null, "caketornado49tiros.jpeg", "baterias", 49],
+      ["Cake Torta Tropical", null, "caketortatropical.jpeg", "baterias", 100],
+      ["Cake USA", null, "cakeusa19tiros.jpeg", "baterias", 19],
+      ["Confeti de Luces", null, "confetideluces16tiros.jpeg", "baterias", 16],
+      ["Europa", null, "europa30tiros.jpeg", "baterias", 30],
+      ["Fiesta Regia", null, "fiestaregia42tiros.jpeg", "baterias", 42],
+      ["Show Caribe", null, "showcaribe178tiros.jpeg", "baterias", 178],
+      ["Show Mariachi", null, "showmariachi120tiros.jpeg", "baterias", 120],
+      ["Tierra", null, "tierra42tiros.jpeg", "baterias", 42]
+    ];
+
+    /* Videos oficiales obtenidos de los códigos QR del catálogo impreso. */
+    const batteryVideos = {
+      "Cake Fortuna": "https://www.youtube.com/watch?v=J8PDyylAMvQ",
+      "Cake Armonía": "https://www.youtube.com/watch?v=3M7VSc-q1iQ",
+      "Cake Fantasía": "https://www.youtube.com/watch?v=b7qhWajox5w",
+      "Cake Sonrisas": "https://www.youtube.com/watch?v=AtdyP4UHBbI",
+      "Cake Las Vegas": "https://www.youtube.com/watch?v=nz75VffQmS8",
+      "Cake Póker": "https://www.youtube.com/watch?v=r9e4hhrOpa0",
+      "Cake Jackpot": "https://www.youtube.com/watch?v=LiMVnHBJHSg",
+      "Cake Ruleta": "https://www.youtube.com/watch?v=Yy13rNVxl4U",
+      "Cake Olmeca": "https://www.youtube.com/watch?v=fCk0i9w4gt4",
+      "Cake Maya": "https://www.youtube.com/watch?v=FZVmBpt-Yrg",
+      "Cake Azteca": "https://www.youtube.com/watch?v=1dHbEX_quHM",
+      "Cake Cosmopolitan": "https://www.youtube.com/watch?v=uAqS7hxkatI",
+      "Cake Fiesta Hawaiana": "https://www.youtube.com/watch?v=DUTR-sjzATs",
+      "Europa": "https://www.youtube.com/watch?v=CQEi4P_rKkQ",
+      "Tierra": "https://www.youtube.com/watch?v=Y-k_NBYKB7Q",
+      "Cake Fiesta Latina": "https://www.youtube.com/watch?v=EOlkz6Tq23Y",
+      "Fiesta Regia": "https://www.youtube.com/watch?v=PVzqEAzpwk0",
+      "Cake Storm": "https://www.youtube.com/watch?v=bSm16hLthRc",
+      "Cake Big Bang": "https://www.youtube.com/watch?v=u_8-cg9bOEA",
+      "Cake Tornado": "https://www.youtube.com/watch?v=0PVRcPXD850",
+      "Cake Festival": "https://www.youtube.com/watch?v=vwEx4qZJl7Q",
+      "Cake Celebración": "https://www.youtube.com/watch?v=eEkPbq-5eQk",
+      "Cake Fiesta": "https://www.youtube.com/watch?v=FzL1NxlCKmk",
+      "Cake Happy": "https://www.youtube.com/watch?v=msn5_KSSr1Q",
+      "Cake Espectacular": "https://www.youtube.com/watch?v=qUvYZPf3BC4",
+      "Cake Amazonas": "https://www.youtube.com/watch?v=IhOmuaZ56nU",
+      "Cake Show Bravo": "https://www.youtube.com/watch?v=F30vlsk6qQw",
+      "Cake Show Verbena": "https://www.youtube.com/watch?v=bVkgXsYoW4w",
+      "Cake Brasil": "https://www.youtube.com/watch?v=aJcS4p7_aDc",
+      "Cake Japón": "https://www.youtube.com/watch?v=i0oFTsZYLLU",
+      "Cake USA": "https://www.youtube.com/watch?v=F6X6bKGq7TE",
+      "Cake España": "https://www.youtube.com/watch?v=TW5IPzMKt-w",
+      "Cake Rumba": "https://www.youtube.com/watch?v=J4RzSiL1u3c",
+      "Cake Samba": "https://www.youtube.com/watch?v=DAagyyuGJk8",
+      "Cake Salsa": "https://www.youtube.com/watch?v=_VA8JU4oEB8",
+      "Cake Bolero": "https://www.youtube.com/watch?v=KJtcD06KEGg",
+      "Cake Feria": "https://www.youtube.com/watch?v=kksUadxpxNk",
+      "Cake Hawái": "https://www.youtube.com/watch?v=XirgY64TgEU",
+      "Show Caribe": "https://www.youtube.com/watch?v=o4DzZXW1nt0",
+      "Cake Súper Show": "https://www.youtube.com/watch?v=H1ItPv8O3kk",
+      "Show Mariachi": "https://www.youtube.com/watch?v=jVHLWZg3A6c",
+      "Cake Noche Mágica": "https://www.youtube.com/watch?v=XmKzfeHuECo&t=3s",
+      "Cake Noche de Fiesta": "https://www.youtube.com/watch?v=8qR9YWemixE",
+      "Cake Paraíso": "https://www.youtube.com/watch?v=7-6huSf7sBs&t=6s",
+      "Cake Torta Tropical": "https://www.youtube.com/watch?v=Ew_pUgC43X4",
+      "Cake Felicidad": "https://www.youtube.com/watch?v=98_RVTnO33Q",
+      "Cake México Power": "https://www.youtube.com/watch?v=2dgCUycydQU",
+      "Cake Brillante": "https://www.youtube.com/watch?v=LKNug7uwHHE",
+      "Cake Estelar": "https://www.youtube.com/watch?v=VoA-tE388fY"
+    };
+
+    products = realCatalog.map(([name, price, image, category, shots], index) => ({
+      id: index + 1,
+      name,
+      price,
+      image,
+      shots,
+      video: batteryVideos[name] || null,
+      category,
+      categoryLabel: categories[category].label,
+      symbol: categories[category].symbol,
+      description: shots
+        ? `Batería de ${shots} tiros del catálogo Pirotecnia MAGIC.`
+        : "Producto del catálogo real de Pirotecnia MAGIC."
+    }));
+
+    const formatPrice = price =>
+      Number.isFinite(price)
+        ? `$${price.toLocaleString("es-MX")} MXN`
+        : "Consultar precio";
+
+    const firework = document.querySelector("#firework");
+
+    for (let index = 0; index < 28; index++) {
+      const ray = document.createElement("span");
+
+      ray.className = "ray";
+      ray.style.transform = `rotate(${index * (360 / 28)}deg)`;
+      ray.style.opacity = 0.35 + Math.random() * 0.65;
+      ray.style.width = `${32 + Math.random() * 20}%`;
+
+      firework.appendChild(ray);
+    }
+
+    const menuButton = document.querySelector("#menuBtn");
+    const navLinks = document.querySelector("#navLinks");
+
+    menuButton.addEventListener("click", () => {
+      const menuIsOpen = navLinks.classList.toggle("open");
+
+      menuButton.setAttribute("aria-expanded", menuIsOpen);
+      menuButton.textContent = menuIsOpen ? "×" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.textContent = "☰";
+      });
+    });
+
+    const productGrid = document.querySelector("#productGrid");
+    const resultCount = document.querySelector("#resultCount");
+    const searchInput = document.querySelector("#productSearch");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+
+    let activeFilter = "all";
+
+    function renderProducts() {
+      const searchTerm = searchInput.value
+        .trim()
+        .toLocaleLowerCase("es");
+
+      const visibleProducts = products.filter(product => {
+        const matchesCategory =
+          activeFilter === "all" ||
+          product.category === activeFilter;
+
+        const matchesSearch =
+          product.name
+            .toLocaleLowerCase("es")
+            .includes(searchTerm) ||
+          product.categoryLabel
+            .toLocaleLowerCase("es")
+            .includes(searchTerm);
+
+        return matchesCategory && matchesSearch;
+      });
+
+      productGrid.innerHTML = visibleProducts
+        .map(product => {
+          return `
+            <article
+              class="product-card"
+              data-category="${product.category}"
+            >
+              <div class="product-art">
+                <span class="tag">
+                  ${product.shots
+                    ? `${product.shots} tiros`
+                    : `Producto ${String(product.id).padStart(2, "0")}`}
+                </span>
+
+                <img
+                  class="product-photo"
+                  src="${product.image}"
+                  alt="${product.name}"
+                  loading="lazy"
+                >
+              </div>
+
+              <div class="product-info">
+                <span class="product-category">
+                  ${product.categoryLabel}
+                </span>
+
+                <h3>${product.name}</h3>
+
+                <p>${product.description}</p>
+
+                <div class="product-meta">
+                  <span class="price">
+                    ${formatPrice(product.price)}
+                  </span>
+
+                  <button
+                    class="add-cart"
+                    type="button"
+                    data-id="${product.id}"
+                  >
+                    Agregar +
+                  </button>
+                </div>
+
+                ${product.video ? `
+                  <a
+                    class="video-btn"
+                    href="${product.video}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver video de ${product.name} en YouTube"
+                  >
+                    ▶ Ver video
+                  </a>
+                ` : ""}
+              </div>
+            </article>
+          `;
+        })
+        .join("");
+
+      resultCount.textContent =
+        `${visibleProducts.length} ${
+          visibleProducts.length === 1
+            ? "producto disponible"
+            : "productos disponibles"
+        }`;
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        document
+          .querySelector(".filter-btn.active")
+          ?.classList.remove("active");
+
+        button.classList.add("active");
+        activeFilter = button.dataset.filter;
+
+        renderProducts();
+      });
+    });
+
+    searchInput.addEventListener("input", renderProducts);
+
+    renderProducts();
+
+    const cartDrawer = document.querySelector("#cartDrawer");
+    const cartOverlay = document.querySelector("#cartOverlay");
+    const cartItems = document.querySelector("#cartItems");
+    const cartCount = document.querySelector("#cartCount");
+    const mobileCartCount =
+      document.querySelector("#mobileCartCount");
+    const cartTotal = document.querySelector("#cartTotal");
+    const checkoutButton =
+      document.querySelector("#checkoutButton");
+    const clearCartButton =
+      document.querySelector("#clearCartButton");
+    const cartTrigger = document.querySelector("#cartTrigger");
+    const mobileCartTrigger =
+      document.querySelector("#mobileCartTrigger");
+    const cartClose = document.querySelector("#cartClose");
+
+    let cart = [];
+
+    try {
+      cart =
+        JSON.parse(
+          localStorage.getItem("laPolvoraCart100")
+        ) || [];
+    } catch (error) {
+      cart = [];
+    }
+
+    /* Limpia datos antiguos o incompletos para evitar que el carrito falle. */
+    cart = Array.isArray(cart)
+      ? cart
+          .map(item => ({
+            id: Number(item.id),
+            quantity: Number(item.quantity ?? item.qty ?? 1)
+          }))
+          .filter(item =>
+            Number.isFinite(item.id) &&
+            Number.isFinite(item.quantity) &&
+            item.quantity > 0 &&
+            products.some(product => product.id === item.id)
+          )
+      : [];
+
+    function saveCart() {
+      localStorage.setItem(
+        "laPolvoraCart100",
+        JSON.stringify(cart)
+      );
+
+      renderCart();
+    }
+
+    function openCart() {
+      cartDrawer.classList.add("open");
+      cartOverlay.classList.add("open");
+
+      cartDrawer.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeCart() {
+      cartDrawer.classList.remove("open");
+      cartOverlay.classList.remove("open");
+
+      cartDrawer.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    function calculateTotal() {
+      return cart.reduce((total, item) => {
+        const product = products.find(
+          product => product.id === item.id
+        );
+
+        if (!product) {
+          return total;
+        }
+
+        return total + (Number.isFinite(product.price) ? product.price : 0) * item.quantity;
+      }, 0);
+    }
+
+    function renderCart() {
+      const totalUnits = cart.reduce(
+        (total, item) => total + item.quantity,
+        0
+      );
+
+      const totalPrice = calculateTotal();
+
+      cartCount.textContent = totalUnits;
+      mobileCartCount.textContent = totalUnits;
+
+      cartTotal.textContent =
+        `$${totalPrice.toLocaleString("es-MX")} MXN`;
+
+      checkoutButton.disabled = cart.length === 0;
+      clearCartButton.disabled = cart.length === 0;
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = `
+          <div class="empty-cart">
+            <div>
+              <span>🛒</span>
+              <strong>Tu carrito está vacío</strong>
+              <p>Agrega productos desde el catálogo.</p>
+            </div>
+          </div>
+        `;
+
+        return;
+      }
+
+      cartItems.innerHTML = cart
+        .map(item => {
+          const product = products.find(
+            product => product.id === item.id
+          );
+
+          if (!product) {
+            return "";
+          }
+
+          return `
+            <div class="cart-item">
+              <div class="cart-item-icon">
+                ${product.image ? `<img src="${product.image}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:8px">` : product.symbol}
+              </div>
+
+              <div>
+                <h3>${product.name}</h3>
+
+                <div class="cart-item-price">
+                  ${Number.isFinite(product.price) ? `${formatPrice(product.price)} c/u` : formatPrice(product.price)}
+                </div>
+
+                <div class="quantity">
+                  <button
+                    type="button"
+                    data-action="minus"
+                    data-id="${item.id}"
+                    aria-label="Quitar una unidad"
+                  >
+                    −
+                  </button>
+
+                  <span>${item.quantity}</span>
+
+                  <button
+                    type="button"
+                    data-action="plus"
+                    data-id="${item.id}"
+                    aria-label="Agregar una unidad"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              <button
+                class="remove-item"
+                type="button"
+                data-action="remove"
+                data-id="${item.id}"
+                aria-label="Eliminar producto"
+              >
+                ×
+              </button>
+            </div>
+          `;
+        })
+        .join("");
+    }
+
+    productGrid.addEventListener("click", event => {
+      const button = event.target.closest(".add-cart");
+
+      if (!button) {
+        return;
+      }
+
+      const productId = Number(button.dataset.id);
+
+      const existingProduct = cart.find(
+        item => item.id === productId
+      );
+
+      if (existingProduct) {
+        existingProduct.quantity += 1;
+      } else {
+        cart.push({
+          id: productId,
+          quantity: 1
+        });
+      }
+
+      saveCart();
+      openCart();
+    });
+
+    cartItems.addEventListener("click", event => {
+      const button = event.target.closest("[data-action]");
+
+      if (!button) {
+        return;
+      }
+
+      const productId = Number(button.dataset.id);
+      const action = button.dataset.action;
+
+      const cartItem = cart.find(
+        item => item.id === productId
+      );
+
+      if (action === "remove") {
+        cart = cart.filter(
+          item => item.id !== productId
+        );
+      }
+
+      if (action === "plus" && cartItem) {
+        cartItem.quantity += 1;
+      }
+
+      if (action === "minus" && cartItem) {
+        cartItem.quantity -= 1;
+      }
+
+      cart = cart.filter(item => item.quantity > 0);
+
+      saveCart();
+    });
+
+    cartTrigger?.addEventListener("click", openCart);
+    mobileCartTrigger?.addEventListener("click", openCart);
+    cartClose?.addEventListener("click", closeCart);
+    cartOverlay?.addEventListener("click", closeCart);
+    clearCartButton?.addEventListener("click", () => {
+      if (cart.length === 0) {
+        return;
+      }
+
+      cart = [];
+      saveCart();
+
+      toast.textContent = "Carrito vaciado correctamente.";
+      toast.classList.add("show");
+      window.setTimeout(() => toast.classList.remove("show"), 2200);
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeCart();
+      }
+    });
+
+    checkoutButton.addEventListener("click", () => {
+      if (cart.length === 0) {
+        return;
+      }
+
+      /*
+        COLOCA AQUÍ TU NÚMERO DE WHATSAPP.
+
+        Debe llevar el código del país, pero no debe
+        tener el signo +, espacios ni guiones.
+
+        Ejemplo de México:
+        525512345678
+      */
+      const whatsappNumber = "525525325609";
+
+      const orderLines = cart.map(item => {
+        const product = products.find(
+          product => product.id === item.id
+        );
+
+        const subtotal = Number.isFinite(product.price)
+          ? product.price * item.quantity
+          : null;
+
+        return (
+          `• ${item.quantity} × ${product.name}` +
+          ` — ${subtotal === null ? "precio por consultar" : `$${subtotal.toLocaleString("es-MX")} MXN`}`
+        );
+      });
+
+      const totalPrice = calculateTotal();
+
+      const whatsappMessage = [
+        "Hola, quiero realizar el siguiente pedido en Pirotecnia MAGIC, Local 222:",
+        "",
+        ...orderLines,
+        "",
+        `TOTAL ESTIMADO: $${totalPrice.toLocaleString("es-MX")} MXN`,
+        "",
+        "¿Me pueden confirmar la disponibilidad y la forma de entrega?"
+      ].join("\n");
+
+      const whatsappUrl =
+        `https://wa.me/${whatsappNumber}` +
+        `?text=${encodeURIComponent(whatsappMessage)}`;
+
+      window.open(
+        whatsappUrl,
+        "_blank",
+        "noopener,noreferrer"
+      );
+    });
+
+    renderCart();
+
+    const scrollProgress =
+      document.querySelector("#scrollProgress");
+
+    function updateScrollProgress() {
+      const scrollableHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+      const percentage =
+        scrollableHeight > 0
+          ? (window.scrollY / scrollableHeight) * 100
+          : 0;
+
+      scrollProgress.style.width = `${percentage}%`;
+    }
+
+    window.addEventListener(
+      "scroll",
+      updateScrollProgress,
+      { passive: true }
+    );
+
+    updateScrollProgress();
+
+    const mobileLinks =
+      document.querySelectorAll(".mobile-nav a");
+
+    const mobileSections =
+      document.querySelectorAll(
+        "#inicio, #productos, #seguridad, #contacto"
+      );
+
+    const mobileNavigationObserver =
+      new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            mobileLinks.forEach(link => {
+              const sectionMatches =
+                link.getAttribute("href") ===
+                `#${entry.target.id}`;
+
+              link.classList.toggle(
+                "active",
+                sectionMatches
+              );
+            });
+          });
+        },
+        {
+          rootMargin: "-35% 0px -55% 0px",
+          threshold: 0
+        }
+      );
+
+    mobileSections.forEach(section => {
+      mobileNavigationObserver.observe(section);
+    });
+
+    const toast = document.querySelector("#toast");
+    const contactForm =
+      document.querySelector("#contactForm");
+
+    contactForm.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const customerName =
+        document.querySelector("#name").value.trim();
+
+      const customerPhone =
+        document.querySelector("#phone").value.trim();
+
+      const eventType =
+        document.querySelector("#event").value.trim();
+
+      const customerMessage =
+        document.querySelector("#message").value.trim();
+
+      /*
+        Este es el mismo número de WhatsApp utilizado
+        para enviar los pedidos del carrito.
+      */
+      const whatsappNumber = "525525325609";
+
+      const contactMessage = [
+        "Hola, quiero solicitar información en Pirotecnia MAGIC, Local 222.",
+        "",
+        `Nombre: ${customerName}`,
+        `Teléfono: ${customerPhone}`,
+        `Tipo de evento: ${eventType || "No especificado"}`,
+        `Mensaje: ${customerMessage || "Quiero conocer las opciones disponibles."}`
+      ].join("\n");
+
+      const whatsappUrl =
+        `https://wa.me/${whatsappNumber}` +
+        `?text=${encodeURIComponent(contactMessage)}`;
+
+      toast.textContent =
+        "Abriendo WhatsApp para enviar tu solicitud…";
+
+      toast.classList.add("show");
+
+      window.open(
+        whatsappUrl,
+        "_blank",
+        "noopener,noreferrer"
+      );
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3500);
+    });
+
+    const revealObserver =
+      new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+    document
+      .querySelectorAll(".reveal")
+      .forEach(element => {
+        revealObserver.observe(element);
+      });
+
+    document.querySelector("#year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
