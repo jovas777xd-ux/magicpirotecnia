@@ -1853,6 +1853,13 @@
     .video-btn{width:100%;min-height:44px;margin-top:12px;display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(255,210,78,.6);border-radius:5px;background:linear-gradient(135deg,rgba(117,12,40,.9),rgba(29,18,42,.96));color:#fff;font-size:.78rem;font-weight:900;text-decoration:none;transition:.22s}
     .video-btn:hover{color:#ffe26d;border-color:#ffc928;transform:translateY(-2px);box-shadow:0 9px 24px rgba(0,0,0,.3),0 0 14px rgba(255,201,40,.12)}
   </style>
+
+<style>
+.hero-local-photo .red-panel{inset:auto;top:50%;left:50%;width:min(72%,300px);height:auto;overflow:hidden;background:transparent;border:0;border-radius:18px;transform:translate(-50%,-50%);box-shadow:0 14px 32px rgba(0,0,0,.22);}
+.hero-local-photo .red-panel img{display:block;width:100%;height:auto;object-fit:contain;object-position:center;}
+.hero-local-photo .firework{display:none;}
+@media(max-width:600px){.hero-local-photo .red-panel{width:min(65%,195px);}}
+</style>
 </head>
 
 <body>
@@ -1962,10 +1969,10 @@
         </div>
 
         <div
-          class="hero-visual"
-          aria-label="Ilustración abstracta de un fuego artificial"
+          class="hero-visual hero-local-photo"
+          aria-label="Fotografía del local de Pirotecnia MAGIC"
         >
-          <div class="red-panel"></div>
+          <div class="red-panel"><img src="local.jpeg" alt="Local de Pirotecnia MAGIC" fetchpriority="high"></div>
 
           <div class="firework" id="firework">
             <div class="spark-core"></div>
@@ -2554,74 +2561,74 @@
 
     /* Catálogo real: el número final de cada archivo corresponde al precio. */
     const realCatalog = [
-      ["Abejita", 50, "abejita50.jpeg", "color"],
+      ["Abejita", 80, "abejita50.jpeg", "color"],
       ["Abejorro Batman", 100, "abejorrobatman100.jpeg", "trueno"],
       ["Adrenocromo", 60, "adrenocromo60.jpeg", "color"],
-      ["Adventure Time", 40, "adventuretime40.jpeg", "color"],
+      ["Adventure Time", 45, "adventuretime40.jpeg", "color"],
       ["Batalla Naval", 350, "batallanaval350.jpeg", "baterias"],
-      ["Batería Humo de Color de Día", null, "bateriahumodecolordedia.jpeg", "baterias"],
-      ["Bazuca Cacahuata 3 Pulgadas", 250, "bazucacacahuata3pulgadas250.jpeg", "trueno"],
-      ["Bazuca Pulpo 2 Pulgadas", 180, "bazucapulpo2pulgadas180.jpeg", "trueno"],
+      ["Batería Humo de Color de Día", 1300, "bateriahumodecolordedia.jpeg", "baterias"],
+      ["Bazuca Cacahuata 3 Pulgadas", 280, "bazucacacahuata3pulgadas250.jpeg", "trueno"],
+      ["Bazuca Pulpo 2 Pulgadas", 250, "bazucapulpo2pulgadas180.jpeg", "trueno"],
       ["Bazuca Pulpo 3 Pulgadas", 280, "bazucapulpo3pulgadas280.jpeg", "trueno"],
       ["Billete", 35, "billete35.jpeg", "trueno"],
       ["Bola de Humo El Micky", 120, "boladehumoelmicky120.jpeg", "color"],
-      ["Camelias", 15, "camelias15.jpeg", "color"],
+      ["Camelias con cracker", 18, "camelias15.jpeg", "color"],
       ["Charro Volador", 60, "charrovolador60.jpeg", "color"],
       ["Chupacabras", 50, "chupacabras50.jpeg", "trueno"],
       ["Confeti de Luz", 500, "confetideluz500.jpeg", "luz"],
       ["Cracker Walking Dead", 45, "crackerwalkingdead45.jpeg", "trueno"],
-      ["Crisantemo", 150, "crisantemo150.jpeg", "color"],
+      ["Crisantemo", 200, "crisantemo150.jpeg", "color"],
       ["Dólar", 35, "dolar35.jpeg", "trueno"],
       ["Enano Espacial", 100, "enanoespacial100.jpeg", "color"],
-      ["Escupidor de Diamantina", 50, "escuidordediamantina50.jpeg", "color"],
-      ["Escupidor", 35, "escupidor35.jpeg", "trueno"],
+      ["Escupidor de Diamantina", 60, "escuidordediamantina50.jpeg", "color"],
+      ["Escupidor", 40, "escupidor35.jpeg", "trueno"],
       ["Esferas del Dragón", 60, "esferasdeldragon60.jpeg", "color"],
       ["Flash", 140, "flash140.jpeg", "luz"],
       ["Gotita", 45, "gotita45.jpeg", "trueno"],
       ["Grito de Satanás", 70, "gritodesatanas70.jpeg", "trueno"],
-      ["Huevo de Codorniz", 70, "heuvodecodorniz70.jpeg", "trueno"],
-      ["Kake 25 Disparos", 400, "kake25disparos400.jpeg", "baterias"],
-      ["Labubu", 35, "labubu35.jpeg", "color"],
-      ["Luciérnagas", 35, "luciernagas35.jpeg", "luz"],
+      ["Huevo de Codorniz", 80, "heuvodecodorniz70.jpeg", "trueno"],
+      ["Kake 25 Disparos", 450, "kake25disparos400.jpeg", "baterias"],
+      ["Labubu", 40, "labubu35.jpeg", "color"],
+      ["Luciérnagas", 60, "luciernagas35.jpeg", "luz"],
       ["Mamut", 35, "mamut35.jpeg", "trueno"],
       ["Medianoche", 500, "medianoche500.jpeg", "baterias"],
       ["Mini Garra", 70, "minigarra70.jpeg", "color"],
       ["Mini Hulk", 70, "minihulk70.jpeg", "color"],
-      ["Minion", 95, "minion95.jpeg", "color"],
-      ["Mini OVNI", 35, "miniovni35.jpeg", "color"],
-      ["Misil", 95, "misil95.jpeg", "color"],
+      ["Minion", 85, "minion95.jpeg", "color"],
+      ["Mini OVNI", 40, "miniovni35.jpeg", "color"],
+      ["Misil", 100, "misil95.jpeg", "color"],
       ["Mosaico", 60, "mosaico60.jpeg", "color"],
       ["Mosaico Grande", 60, "mosaicogrande60.jpeg", "color"],
-      ["Olaf", 95, "olaf95.jpeg", "color"],
+      ["Olaf", 85, "olaf95.jpeg", "color"],
       ["Ollita", 25, "olllita25.jpeg", "color"],
       ["Paleta de Luz", 40, "paletadeluz40.jpeg", "luz"],
-      ["Paloma de Luz", 70, "palomadeluz70.jpeg", "luz"],
-      ["Peppa Pig", 40, "peppapig40.jpeg", "color"],
+      ["Paloma de Luz", 80, "palomadeluz70.jpeg", "luz"],
+      ["Peppa Pig", 35, "peppapig40.jpeg", "color"],
       ["Play-Doh", 35, "playdohh35.jpeg", "color"],
       ["Pop", 350, "pop350.jpeg", "trueno"],
-      ["Ratón", null, "raton.jpeg", "trueno"],
+      ["Ratón", 80, "raton.jpeg", "trueno"],
       ["Ratón Cometín", 70, "ratoncometin70.jpeg", "trueno"],
-      ["Ratón Especial", null, "ratonespecial.jpeg", "trueno"],
+      ["Ratón Especial", 100, "ratonespecial.jpeg", "trueno"],
       ["Reguilete", 60, "reguilete60.jpeg", "color"],
       ["Remolino", 500, "remolino500.jpeg", "baterias"],
       ["Revelación", 1500, "revelacion1500.jpeg", "baterias"],
       ["Rosa", 120, "rosa120.jpeg", "luz"],
       ["Rosa Cracker de Luz", 140, "rosacrackerdeluz140.jpeg", "luz"],
       ["Silbato de Piso", 60, "silbatodepiso60.jpeg", "trueno"],
-      ["Sonajas Bebé", 60, "sonajasbebe60.jpeg", "color"],
+      ["Sonajas Bebé", 80, "sonajasbebe60.jpeg", "color"],
       ["Súper Cometín", 50, "supercomitin50.jpeg", "trueno"],
       ["Súper Kake", 80, "superkake80.jpeg", "baterias"],
-      ["Tamalito", 40, "tamalito40.jpeg", "trueno"],
+      ["Tamalito", 35, "tamalito40.jpeg", "trueno"],
       ["Tormenta Luminosa", 40, "tormentaluminosa40.jpeg", "luz"],
       ["Tornado", 45, "tornado45.jpeg", "color"],
       ["Toro Loco", 100, "toroloco100.jpeg", "trueno"],
-      ["Trabuco Carnaval", 85, "trabucocarnaval85.jpeg", "trueno"],
-      ["Trabuco El Micky", null, "trabucoelmicky.jpeg", "trueno"],
+      ["Trabuco Carnaval", 80, "trabucocarnaval85.jpeg", "trueno"],
+      ["Trabuco El Micky original", 50, "trabucoelmicky.jpeg", "trueno"],
       ["Trabuco Especial El Micky", 70, "trabucoespecialelmicky70.jpeg", "trueno"],
       ["Un Buen Tamal", 70, "unbuentamal70.jpeg", "trueno"],
       ["Vara de Luz", 100, "varadeluz100.jpeg", "luz"],
       ["Vara de Luz Esfera", 100, "varadeluzesfera100.jpeg", "luz"],
-      ["Vara Pajarera", null, "varapajarera.jpeg", "luz"],
+      ["Vara Pajarera", 80, "varapajarera.jpeg", "luz"],
       ["Vara Pajarera de Luz", 70, "varapajareradeluz70.jpeg", "luz"],
       ["Vara Urba", 80, "varaurba80.jpeg", "trueno"],
       ["Varita Mágica", 40, "varitamagica40.jpeg", "luz"],
@@ -3357,4 +3364,4 @@
       new Date().getFullYear();
   </script>
 </body>
-</html>
+</html> 
